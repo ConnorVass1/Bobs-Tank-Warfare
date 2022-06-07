@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlayerOne extends Actor
 {
     int HP;
-    int speedX;
-    int speedY;
+    int speedX = 0;
+    int speedY = 0;
     int damage;
     
     /**
@@ -19,16 +19,38 @@ public class PlayerOne extends Actor
      */
     public void act()
     {
-        
+        movement();
+        setLocation(getX() + speedX, getY() + speedY);
     }
     
     
     public void movement()
     {
-        if(Greenfoot.isKeyDown("Left"))
+        speedX = 0;
+        speedY = 0;
+
+        if(Greenfoot.isKeyDown("a"))
         {
-        
+            speedX = -5;
+            setRotation(270);
+        }
+        if(Greenfoot.isKeyDown("d"))
+        {
+            speedX = 5;
+            setRotation(90);
+        }
+        if(Greenfoot.isKeyDown("s"))
+        {
+            speedY = 5;
+            setRotation(180);
+        }
+        if(Greenfoot.isKeyDown("w"))
+        {
+            speedY = -5;
+            setRotation(0);
         }
         
+       
+    
     }
 }
