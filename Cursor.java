@@ -8,12 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cursor extends Actor
 {
-    /**
-     * Act - do whatever the Cursor wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int dx=0;
+    int dy=0;
     public void act()
     {
-        // Add your action code here.
+        movement();
+        setLocation(getX()+dx, getY()+dy);
+    }
+    
+    public void movement()
+    {
+        if (Greenfoot.isKeyDown("a"))
+        {
+            dx=-5;
+        }
+        
+        if (Greenfoot.isKeyDown("d"))
+        {
+            dx=5;
+        }
+        
+        if (Greenfoot.isKeyDown("w"))
+        {
+            dy=-5;
+        }
+        
+        if (Greenfoot.isKeyDown("s"))
+        {
+            dy=5;
+        }
     }
 }

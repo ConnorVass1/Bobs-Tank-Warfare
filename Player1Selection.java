@@ -16,7 +16,16 @@ public class Player1Selection extends World
     public Player1Selection()
     {    
         super(1000, 600, 1);
-        
-        
+
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Cursor cursor = new Cursor();
+        addObject(cursor,489,290);
     }
 }
