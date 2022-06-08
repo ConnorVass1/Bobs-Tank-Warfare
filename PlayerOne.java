@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerOne extends Actor
 {
+    //String setImage("folder/hp"+player.hp+".png"):
     int HP;
     int speedX = 0;
     int speedY = 0;
@@ -22,6 +23,24 @@ public class PlayerOne extends Actor
     {
         movement();
         bulletmovement();
+        collision();
+    }
+    
+    public void collision()
+    {
+        Wall s1=(Wall) getOneObjectAtOffset(0- getImage().getWidth()/2,0, Wall.class);
+        if (s1!=null) 
+        {
+            setLocation(s1.getX()+s1.getImage().getWidth()/2
+            +getImage().getWidth()/2,getY());
+        }
+        
+        Wall s2=(Wall) getOneObjectAtOffset(0+ getImage().getWidth()/2,0, Wall.class);
+        if (s2!=null) 
+        {
+            setLocation(s2.getX()-s2.getImage().getWidth()/2
+            -getImage().getWidth()/2,getY());
+        }
     }
     
     
