@@ -10,10 +10,26 @@ public class Cursor extends Actor
 {
     int dx=0;
     int dy=0;
+    boolean selected = false;
+    TankClasses tank;
     public void act()
     {
+        
+        dx=0;
+        dy=0;
         movement();
         setLocation(getX()+dx, getY()+dy);
+        
+        
+        
+        
+        
+        
+         if (selected==true&&getWorld() instanceof Player1Selection)
+        {
+            Greenfoot.setWorld(new Player2Selection());          
+        } 
+         
     }
     
     public void movement()
@@ -36,6 +52,20 @@ public class Cursor extends Actor
         if (Greenfoot.isKeyDown("s"))
         {
             dy=5;
+        }
+        
+        if (Greenfoot.isKeyDown("enter")&&isTouching(TankClasses.class))
+        {
+            selected=true;
+        }
+    }
+    
+    public void classes()
+    {
+        Actor Amogus = getOneIntersectingObject(AmogusMKII.class);
+        if (Amogus!= null)
+        {
+            
         }
     }
 }
