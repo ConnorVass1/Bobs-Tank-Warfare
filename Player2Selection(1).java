@@ -15,6 +15,6 @@ public class Player2Selection extends World
      */
     public Player2Selection()
     {    
-        super(600, 400, 1); 
+        super(1000, 600, 1); 
     }
 }
