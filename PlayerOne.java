@@ -20,7 +20,7 @@ public class PlayerOne extends Actor
     public void act()
     {
         movement();
-        
+        combat();
     }
     
     
@@ -53,5 +53,16 @@ public class PlayerOne extends Actor
     
     }
     
+    public void combat()
+    {
+        FrameCount++;
+        MyWorld myworld = (MyWorld) getWorld();
+        if(Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        {
+            myworld.addObject(new Bullet(), getX(), getY());
+            FrameCount = 0;
+        }
+    
+    }
     
 }
