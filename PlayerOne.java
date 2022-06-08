@@ -75,7 +75,7 @@ public class PlayerOne extends Actor
         {
             speedX = -3;
             speedY = 3;
-            setRotation(45);
+            setRotation(225);
         }
         
         setLocation(getX() + speedX, getY() + speedY);
@@ -110,7 +110,33 @@ public class PlayerOne extends Actor
             FrameCount = 0;
         }
         
+        if(getRotation() == 45 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        {
+            getWorld().addObject(new Bullet(3, -3), getX() + 35, getY() - 35);
+            FrameCount = 0;
         
+        }
+        
+        if(getRotation() == 135 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        {
+            getWorld().addObject(new Bullet(3, 3), getX() + 35, getY() + 35);
+            FrameCount = 0;
+        
+        }
+        
+        if(getRotation() == 225 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        {
+            getWorld().addObject(new Bullet(-3, 3), getX() - 35, getY() + 35);
+            FrameCount = 0;
+        
+        }
+        
+        if(getRotation() == 315 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        {
+            getWorld().addObject(new Bullet(-3, -3), getX() - 35, getY() - 35);
+            FrameCount = 0;
+        
+        }
     }
     
     
