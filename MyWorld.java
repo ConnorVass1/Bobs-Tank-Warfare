@@ -18,8 +18,9 @@ public class MyWorld extends World
     {    
         super(1000, 600, 1);
         
-        addObject(new PlayerOne(), 100, 300);
         addObject(new PlayerTwo(), 900, 300);
+        PlayerOne playerone = new PlayerOne();
+        addObject(playerone, 100, 300);
     }
     
     

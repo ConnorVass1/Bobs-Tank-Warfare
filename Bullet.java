@@ -8,21 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bullet extends Actor
 {
-    int bulletspeedX = 5;
-    MyWorld myworld = (MyWorld) getWorld();
+    int deltaX;
+    int deltaY;
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here
-        setLocation(getX() + bulletspeedX, getY());
-        
-        if(touchingcond() == true)
+        setLocation(getX() + deltaX, getY() + deltaY);
+        if(Bullet.class!=null &&touchingcond() == true)
         {
-            myworld.removeObject(this);
-        }
+            getWorld().removeObject(this);
+        }   
+        
     }
     
     public boolean touchingcond()
@@ -47,7 +46,7 @@ public class Bullet extends Actor
             return true;
         }
         
-        if(getY() < getWorld().getHeight())
+        if(getY() < getImage().getHeight())
         {
             return true;
         }
@@ -59,5 +58,13 @@ public class Bullet extends Actor
         
         
     }
+    
+    public Bullet(int nDeltaX, int nDeltaY)
+    {
+        deltaX= nDeltaX;
+        deltaY= nDeltaY;
+    }
+    
+
 }
 
