@@ -19,5 +19,34 @@ public class PlayerTwo extends Actor
     public void act()
     {
         // Add your action code here.
+        movement();
+    }
+    public void movement()
+    {
+        speedX = 0;
+        speedY = 0;
+
+        if(Greenfoot.isKeyDown("Left"))
+        {
+            speedX = -5;
+            setRotation(180);
+        }
+        if(Greenfoot.isKeyDown("Right"))
+        {
+            speedX = 5;
+            setRotation(0);
+        }
+        if(Greenfoot.isKeyDown("Down"))
+        {
+            speedY = 5;
+            setRotation(90);
+        }
+        if(Greenfoot.isKeyDown("Up"))
+        {
+            speedY = -5;
+            setRotation(270);
+        }
+        
+        setLocation(getX() + speedX, getY() + speedY);
     }
 }

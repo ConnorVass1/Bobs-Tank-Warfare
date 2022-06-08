@@ -12,7 +12,7 @@ public class PlayerOne extends Actor
     int speedX = 0;
     int speedY = 0;
     int damage;
-    
+    int FrameCount = 0;
     /**
      * Act - do whatever the PlayerOne wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +20,7 @@ public class PlayerOne extends Actor
     public void act()
     {
         movement();
-        setLocation(getX() + speedX, getY() + speedY);
+        
     }
     
     
@@ -28,7 +28,6 @@ public class PlayerOne extends Actor
     {
         speedX = 0;
         speedY = 0;
-
         if(Greenfoot.isKeyDown("a"))
         {
             speedX = -5;
@@ -50,7 +49,9 @@ public class PlayerOne extends Actor
             setRotation(0);
         }
         
-       
+        setLocation(getX() + speedX, getY() + speedY);
     
     }
+    
+    
 }

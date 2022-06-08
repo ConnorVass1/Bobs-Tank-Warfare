@@ -1,4 +1,5 @@
 #Greenfoot project file
+class.Bullet.image=ball.png
 class.Cursor.image=arrow.png
 class.MyWorld.image=rect10799.png
 class.PlayerOne.image=car01-n.png
