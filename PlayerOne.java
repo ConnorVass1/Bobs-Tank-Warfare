@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PlayerOne extends Actor
+public class PlayerOne extends Players
 {
     //String setImage("folder/hp"+player.hp+".png"):
     int HP=0;

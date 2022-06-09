@@ -14,6 +14,9 @@ public class Damage extends Powerups
      */
     public void act()
     {
-        // Add your action code here.
+        if (isTouching(Players.class))
+        {
+            getWorld().removeObject(this);
+        }
     }
 }
