@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerTwo extends Actor
 {           
-    int HP;
+    int HP=0;
     int speedX;
     int speedY;
     int damage;

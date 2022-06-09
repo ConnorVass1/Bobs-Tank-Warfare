@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlayerOne extends Actor
 {
     //String setImage("folder/hp"+player.hp+".png"):
-    int HP;
+    int HP=0;
     int speedX = 0;
     int speedY = 0;
     int damage;
@@ -156,6 +156,9 @@ public class PlayerOne extends Actor
             FrameCount = 0;
         
         }
+        
+
+        
     }
     
     
