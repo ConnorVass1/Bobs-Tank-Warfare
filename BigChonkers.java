@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BigChonkers extends TankClasses
 {
-    /**
-     * Act - do whatever the BigChonkers wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int HP=15;
+    int speedX = 2;
+    int speedY = 0;
+    int damage=1;
     public void act()
     {
         // Add your action code here.
