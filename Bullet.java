@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bullet extends Actor
 {
+    int FrameCount;
     int deltaX;
     int deltaY;
     /**
@@ -19,13 +20,22 @@ public class Bullet extends Actor
         setLocation(getX() + deltaX, getY() + deltaY);
         if(Bullet.class!=null &&touchingcond() == true)
         {
-            getWorld().removeObject(this);
+            FrameCount++;
+            if(FrameCount > 6)
+            {
+                getWorld().removeObject(this);
+                FrameCount = 0;
+            }
         }   
-        
     }
     
     public boolean touchingcond()
     {
+        if(isTouching(PlayerOne.class))
+        {
+            return true;
+        }
+        
         if(isTouching(PlayerTwo.class))
         {
             return true;
@@ -56,8 +66,8 @@ public class Bullet extends Actor
             return false;
         }
         
-        
     }
+    
     
     public Bullet(int nDeltaX, int nDeltaY)
     {
