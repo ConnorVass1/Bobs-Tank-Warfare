@@ -15,6 +15,8 @@ public class PlayerOne extends Actor
     int damage;
     int FrameCount = 0;
     int HPFrameCount;
+    int PowerUpframecount=0;
+    
     MyWorld myworld = (MyWorld) getWorld();
     /**
      * Act - do whatever the PlayerOne wants to do. This method is called whenever
@@ -176,7 +178,20 @@ public class PlayerOne extends Actor
         {
             Greenfoot.setWorld(new MyWorld());
         }
-    
-    
+        
+        if(isTouching(Heal.class))
+        {
+            HP = HP + 1;
+        }
+        
+        if(isTouching(Speed.class))
+        {
+            PowerUpframecount++;
+            if(PowerUpframecount<=100)
+            {
+                speedX=speedX+5;
+            }
+        }
+        
     }
 }
