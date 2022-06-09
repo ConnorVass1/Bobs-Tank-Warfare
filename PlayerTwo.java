@@ -79,7 +79,6 @@ public class PlayerTwo extends Actor
             speedY = 3;
             setRotation(225);
         }
-        
         setLocation(getX() + speedX, getY() + speedY);
     
     }
