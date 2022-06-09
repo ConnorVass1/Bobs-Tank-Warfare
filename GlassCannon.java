@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GlassCannon extends TankClasses
 {
-    /**
-     * Act - do whatever the GlassCannon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int HP=5;
+    int speedX = 5;
+    int speedY = 0;
+    int damage=1;
     public void act()
     {
         // Add your action code here.
