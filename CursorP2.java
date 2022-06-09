@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cursor here.
+ * Write a description of class CursorP2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cursor extends Actor
+public class CursorP2 extends Actor
 {
     int dx=0;
     int dy=0;
@@ -15,25 +15,24 @@ public class Cursor extends Actor
     TankClasses tank;
     int select=0;
     int select2=0;
-    int press= 0;
+    int  press= 0;
     public void act()
     {
         
         dx=0;
         dy=0;
-         if (getWorld() instanceof Player1Selection)
+         if (getWorld() instanceof Player2Selection)
         {
-            movement();          
+            movement2();          
         } 
-        classes();
-    
+        classes2();
         setLocation(getX()+dx, getY()+dy);
-        
         
         if (Greenfoot.isKeyDown("enter"))
         {
             select=1;
         }
+        
         
         
         
@@ -49,35 +48,7 @@ public class Cursor extends Actor
          
     }
     
-    public void movement()
-    {
-        if (Greenfoot.isKeyDown("a"))
-        {
-            dx=-5;
-        }
-        
-        if (Greenfoot.isKeyDown("d"))
-        {
-            dx=5;
-        }
-        
-        if (Greenfoot.isKeyDown("w"))
-        {
-            dy=-5;
-        }
-        
-        if (Greenfoot.isKeyDown("s"))
-        {
-            dy=5;
-        }
-        
-        if (Greenfoot.isKeyDown("enter")&&isTouching(TankClasses.class)&&press==0)
-        {
-            selected=true;
-        }
-        
-        
-    }
+    
     
     public void classes()
     {
@@ -101,7 +72,7 @@ public class Cursor extends Actor
             select=4;
         }
         
-        if (Greenfoot.isKeyDown("enter")&&press==0)
+        if (Greenfoot.isKeyDown("enter"))
         {
             System.out.println(""+select);
         }
@@ -141,27 +112,27 @@ public class Cursor extends Actor
     
     public void classes2()
     {
-        if (Greenfoot.isKeyDown("enter")&&isTouching(AmogusMKII.class))
+        if (Greenfoot.isKeyDown("enter")&&isTouching(AmogusMKII.class)&&press==0)
         {
             select2=1;
         }
         
-        if (Greenfoot.isKeyDown("enter")&&isTouching(BigChonkers.class))
+        if (Greenfoot.isKeyDown("enter")&&isTouching(BigChonkers.class)&&press==0)
         {
             select2=2;
         }
         
-        if (Greenfoot.isKeyDown("enter")&&isTouching(Bob.class))
+        if (Greenfoot.isKeyDown("enter")&&isTouching(Bob.class)&&press==0)
         {
             select2=3;
         }
         
-        if (Greenfoot.isKeyDown("enter")&&isTouching(GlassCannon.class))
+        if (Greenfoot.isKeyDown("enter")&&isTouching(GlassCannon.class)&&press==0)
         {
             select2=4;
         }
         
-        if (Greenfoot.isKeyDown("enter"))
+        if (Greenfoot.isKeyDown("enter")&&press==0)
         {
             System.out.println(""+select2);
         }

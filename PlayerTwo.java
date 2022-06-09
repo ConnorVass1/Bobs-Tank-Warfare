@@ -24,7 +24,6 @@ public class PlayerTwo extends Players
         movement();
         bulletmovement();
         HPMechanics();
-        System.out.println(HPFrameCount);
     }
     
     public void movement()

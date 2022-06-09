@@ -18,6 +18,7 @@ public class Player2Selection extends World
         super(600, 400, 1); 
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -32,5 +33,8 @@ public class Player2Selection extends World
         addObject(bigChonkers,148,312);
         Bob bob = new Bob();
         addObject(bob,298,305);
+        removeObject(cursor);
+        CursorP2 cursorP2 = new CursorP2();
+        addObject(cursorP2,84,110);
     }
 }
