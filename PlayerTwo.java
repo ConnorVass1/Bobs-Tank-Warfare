@@ -8,11 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerTwo extends Actor
 {           
+
     int HP=0;
+
+    int HP = 10;
+
     int speedX;
     int speedY;
     int damage;
     int FrameCount;
+    int HPFrameCount;
     /**
      * Act - do whatever the PlayerTwo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,6 +27,8 @@ public class PlayerTwo extends Actor
         // Add your action code here.
         movement();
         bulletmovement();
+        HPMechanics();
+        System.out.println(HPFrameCount);
     }
     
     public void movement()
@@ -76,7 +83,6 @@ public class PlayerTwo extends Actor
             speedY = 3;
             setRotation(225);
         }
-        
         setLocation(getX() + speedX, getY() + speedY);
     
     }
@@ -84,56 +90,71 @@ public class PlayerTwo extends Actor
     public void bulletmovement()
     {
         FrameCount++;
-        if(getRotation() == 0 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 0 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 50);
+            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 55);
             FrameCount = 0;
         }
         
-        if(getRotation() == 90 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 90 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(5, 0), getX() + 50, getY());
+            getWorld().addObject(new Bullet(5, 0), getX() + 55, getY());
             FrameCount = 0;
         }
         
-        if(getRotation() == 180 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 180 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 50);
+            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 55);
             FrameCount = 0;
         }
         
-        if(getRotation() == 270 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 270 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(-5, 0), getX() - 50, getY());
+            getWorld().addObject(new Bullet(-5, 0), getX() - 55, getY());
             FrameCount = 0;
         }
         
-        if(getRotation() == 45 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 45 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(3, -3), getX() + 50, getY() - 50);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 135 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, 3), getX() + 50, getY() + 50);
+            getWorld().addObject(new Bullet(3, -3), getX() + 55, getY() - 55);
             FrameCount = 0;
         
         }
         
-        if(getRotation() == 225 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 135 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(-3, 3), getX() - 50, getY() + 50);
+            getWorld().addObject(new Bullet(3, 3), getX() + 55, getY() + 55);
             FrameCount = 0;
         
         }
         
-        if(getRotation() == 315 && Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(getRotation() == 225 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(-3, -3), getX() - 50, getY() - 50);
+            getWorld().addObject(new Bullet(-3, 3), getX() - 55, getY() + 55);
             FrameCount = 0;
         
+        }
+        
+        if(getRotation() == 315 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
+        {
+            getWorld().addObject(new Bullet(-3, -3), getX() - 55, getY() - 55);
+            FrameCount = 0;
+        
+        }
+    }
+    
+    public void HPMechanics()
+    {
+        HPFrameCount++;
+        if(isTouching(Bullet.class) && HPFrameCount > 96)
+        {
+            HP = HP - 1;
+            HPFrameCount = 0;
+        }
+        
+        if(HP == 0)
+        {
+            Greenfoot.setWorld(new MyWorld());
         }
     }
 }
