@@ -14,6 +14,7 @@ public class PlayerOne extends Actor
     int speedY = 0;
     int damage;
     int FrameCount = 0;
+    int HPFrameCount;
     MyWorld myworld = (MyWorld) getWorld();
     /**
      * Act - do whatever the PlayerOne wants to do. This method is called whenever
@@ -22,6 +23,7 @@ public class PlayerOne extends Actor
     public void act()
     {
         movement();
+        HPMechanics();
         bulletmovement();
         collision();
     }
@@ -107,58 +109,71 @@ public class PlayerOne extends Actor
         FrameCount++;
         if(getRotation() == 0 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 50);
+            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 55);
             FrameCount = 0;
         }
         
         if(getRotation() == 90 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(5, 0), getX() + 50, getY());
+            getWorld().addObject(new Bullet(5, 0), getX() + 55, getY());
             FrameCount = 0;
         }
         
         if(getRotation() == 180 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 50);
+            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 55);
             FrameCount = 0;
         }
         
         if(getRotation() == 270 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(-5, 0), getX() - 50, getY());
+            getWorld().addObject(new Bullet(-5, 0), getX() - 55, getY());
             FrameCount = 0;
         }
         
         if(getRotation() == 45 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(3, -3), getX() + 35, getY() - 35);
+            getWorld().addObject(new Bullet(3, -3), getX() + 55, getY() - 55);
             FrameCount = 0;
         
         }
         
         if(getRotation() == 135 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(3, 3), getX() + 35, getY() + 35);
+            getWorld().addObject(new Bullet(3, 3), getX() + 55, getY() + 55);
             FrameCount = 0;
         
         }
         
         if(getRotation() == 225 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(-3, 3), getX() - 35, getY() + 35);
+            getWorld().addObject(new Bullet(-3, 3), getX() - 55, getY() + 55);
             FrameCount = 0;
         
         }
         
         if(getRotation() == 315 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(-3, -3), getX() - 35, getY() - 35);
+            getWorld().addObject(new Bullet(-3, -3), getX() - 55, getY() - 55);
             FrameCount = 0;
         
         }
     }
     
+    public void HPMechanics()
+    {
+        HPFrameCount++;
+        if(isTouching(Bullet.class) && HPFrameCount > 96)
+        {
+            HP = HP - 1;
+            HPFrameCount = 0;
+        }
+        
+        if(HP == 0)
+        {
+            Greenfoot.setWorld(new MyWorld());
+        }
     
     
-    
+    }
 }
