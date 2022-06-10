@@ -147,9 +147,6 @@ public class PlayerTwo extends Players
             HPFrameCount = 0;
         }
         
-        if(HP == 0)
-        {
-            Greenfoot.setWorld(new MyWorld());
-        }
+        
     }
 }

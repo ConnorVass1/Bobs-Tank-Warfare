@@ -1,11 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class PlayerOne here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class PlayerOne extends Players
 {
     //String setImage("folder/hp"+player.hp+".png"):
@@ -16,18 +9,25 @@ public class PlayerOne extends Players
     int FrameCount = 0;
     int HPFrameCount;
     int PowerUpframecount=0;
-    
+    int p11;
+    int p22;
     MyWorld myworld = (MyWorld) getWorld();
-    /**
-     * Act - do whatever the PlayerOne wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
+    public PlayerOne(int sel, int sel2)
+    {
+        p11=sel;
+        p22=sel2;
+    }
+    
     public void act()
     {
         movement();
         HPMechanics();
         bulletmovement();
         collision();
+        
+        System.out.println("playerone has selected"+p11);
+        System.out.println("playertwo has selected"+p22);
     }
     
     public void collision()
@@ -174,11 +174,14 @@ public class PlayerOne extends Players
             HPFrameCount = 0;
         }
         
-        if(HP == 0)
-        {
-            Greenfoot.setWorld(new MyWorld());
-        }
         
+        
+        
+        
+    }
+    
+    public void PowerUps()
+    {
         if(isTouching(Heal.class))
         {
             HP = HP + 1;
@@ -193,5 +196,19 @@ public class PlayerOne extends Players
             }
         }
         
+        if(isTouching(Damage.class))
+        {
+            PowerUpframecount++;
+            if(PowerUpframecount<=100)
+            {
+                damage=damage+1;
+            }
+        }
+        
+        if (PowerUpframecount>=100)
+        {
+            damage=1;
+            speedX=speedX-1;
+        }
     }
 }
