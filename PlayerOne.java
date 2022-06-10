@@ -26,11 +26,13 @@ public class PlayerOne extends Players
     {
         P1class=sel;
         P2class=sel2;
+        setclass();
     }
     
+   
     public void act()
     {
-        setclass();
+        
         movement();
         HPMechanics();
         bulletmovement();

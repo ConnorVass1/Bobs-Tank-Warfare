@@ -23,6 +23,8 @@ public class MyWorld extends World
 
         addObject(playerone, 100, 300);
         
+        addObject(new HP1(playerone), 100, 900);
+        
     }
     
     
