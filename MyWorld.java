@@ -22,6 +22,7 @@ public class MyWorld extends World
         PlayerOne playerone = new PlayerOne(selection1, selection2);
 
         addObject(playerone, 100, 300);
+        
     }
     
     
