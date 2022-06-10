@@ -9,25 +9,20 @@ public class PlayerOne extends Players
     int FrameCount = 0;
     int HPFrameCount;
     int PowerUpframecount=0;
-    int p11;
-    int p22;
+
     MyWorld myworld = (MyWorld) getWorld();
     
     public PlayerOne(int sel, int sel2)
     {
-        p11=sel;
-        p22=sel2;
-    }
-    
+
     public void act()
     {
+        setclass();
         movement();
         HPMechanics();
         bulletmovement();
         collision();
-        
-        System.out.println("playerone has selected"+p11);
-        System.out.println("playertwo has selected"+p22);
+
     }
     
     public void collision()
@@ -196,6 +191,7 @@ public class PlayerOne extends Players
             }
         }
         
+
         if(isTouching(Damage.class))
         {
             PowerUpframecount++;
@@ -210,5 +206,6 @@ public class PlayerOne extends Players
             damage=1;
             speedX=speedX-1;
         }
+
     }
 }
