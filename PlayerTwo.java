@@ -14,16 +14,28 @@ public class PlayerTwo extends Players
     int damage;
     int FrameCount;
     int HPFrameCount;
-    /**
-     * Act - do whatever the PlayerTwo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int P1class;
+    int P2class;
+    //class initializations
+    AmogusMKII amog= new AmogusMKII();
+    BigChonkers chonk= new BigChonkers();
+    Bob bob= new Bob();
+    GlassCannon glass= new GlassCannon();
+    
+    
+    public PlayerTwo(int sel, int sel2)
+    {
+        P1class=sel;
+        P2class=sel2;
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        setclass();
         movement();
         bulletmovement();
         HPMechanics();
+        System.out.println("stats are:HP "+HP+"SPeed"+speedX+"Damage"+damage);
     }
     
     public void movement()
@@ -150,6 +162,37 @@ public class PlayerTwo extends Players
         if(HP == 0)
         {
             Greenfoot.setWorld(new MyWorld());
+        }
+    }
+    
+    public void setclass()
+    {
+        if(P2class==1)
+        {
+            HP= amog.HP;
+            speedX=amog.speedX;
+            damage= amog.damage;
+        }
+        
+        if(P2class==2)
+        {
+            HP= chonk.HP;
+            speedX=chonk.speedX;
+            damage= chonk.damage;
+        }
+        
+        if(P2class==3)
+        {
+            HP= bob.HP;
+            speedX=bob.speedX;
+            damage= bob.damage;
+        }
+        
+        if(P2class==4)
+        {
+            HP= glass.HP;
+            speedX=glass.speedX;
+            damage= glass.damage;
         }
     }
 }
