@@ -11,6 +11,15 @@ public class PlayerOne extends Players
     int PowerUpframecount=0;
     int P1class;
     int P2class;
+    
+    
+    
+    AmogusMKII amog= new AmogusMKII();
+    BigChonkers chonk= new BigChonkers();
+    Bob bob= new Bob();
+    GlassCannon glass= new GlassCannon();
+    
+    
     MyWorld myworld = (MyWorld) getWorld();
     
     public PlayerOne(int sel, int sel2)
@@ -21,10 +30,13 @@ public class PlayerOne extends Players
     
     public void act()
     {
+        setclass();
         movement();
         HPMechanics();
         bulletmovement();
         collision();
+        
+        System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
     }
     
     public void collision()
@@ -211,6 +223,32 @@ public class PlayerOne extends Players
     
     public void setclass()
     {
+        if(P1class==1)
+        {
+            HP= amog.HP;
+            speedX=amog.speedX;
+            damage= amog.damage;
+        }
         
+        if(P1class==2)
+        {
+            HP= chonk.HP;
+            speedX=chonk.speedX;
+            damage= chonk.damage;
+        }
+        
+        if(P1class==3)
+        {
+            HP= bob.HP;
+            speedX=bob.speedX;
+            damage= bob.damage;
+        }
+        
+        if(P1class==4)
+        {
+            HP= glass.HP;
+            speedX=glass.speedX;
+            damage= glass.damage;
+        }
     }
 }

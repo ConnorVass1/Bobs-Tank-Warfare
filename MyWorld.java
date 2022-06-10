@@ -18,7 +18,7 @@ public class MyWorld extends World
 
         int p1=selection1;
         int p2=selection2;
-        addObject(new PlayerTwo(), 900, 300);
+        addObject(new PlayerTwo(selection1, selection2), 900, 300);
         PlayerOne playerone = new PlayerOne(selection1, selection2);
 
         addObject(playerone, 100, 300);
