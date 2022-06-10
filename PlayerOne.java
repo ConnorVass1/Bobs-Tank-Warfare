@@ -1,11 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class PlayerOne here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class PlayerOne extends Players
 {
     //String setImage("folder/hp"+player.hp+".png"):
@@ -17,32 +10,11 @@ public class PlayerOne extends Players
     int HPFrameCount;
     int PowerUpframecount=0;
 
-    int P1class;
-    int P2class;
-    
-    //class initializations
-    AmogusMKII amog= new AmogusMKII();
-    BigChonkers chonk= new BigChonkers();
-    Bob bob= new Bob();
-    GlassCannon glass= new GlassCannon();
-    
-    
-    
-    
     MyWorld myworld = (MyWorld) getWorld();
     
     public PlayerOne(int sel, int sel2)
     {
-        P1class=sel;
-        P2class=sel2;
-    }
 
-    
-    
-    /**
-     * Act - do whatever the PlayerOne wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         setclass();
@@ -50,7 +22,7 @@ public class PlayerOne extends Players
         HPMechanics();
         bulletmovement();
         collision();
-        System.out.println("stats are:HP "+HP+"Speed"+speedX+"Damage"+damage);
+
     }
     
     public void collision()
@@ -197,11 +169,14 @@ public class PlayerOne extends Players
             HPFrameCount = 0;
         }
         
-        if(HP == 0)
-        {
-            Greenfoot.setWorld(new MyWorld());
-        }
         
+        
+        
+        
+    }
+    
+    public void PowerUps()
+    {
         if(isTouching(Heal.class))
         {
             HP = HP + 1;
@@ -230,37 +205,6 @@ public class PlayerOne extends Players
         {
             damage=1;
             speedX=speedX-1;
-        }
-    }
-    
-    public void setclass()
-    {
-        if(P1class==1)
-        {
-            HP= amog.HP;
-            speedX=amog.speedX;
-            damage= amog.damage;
-        }
-        
-        if(P1class==2)
-        {
-            HP= chonk.HP;
-            speedX=chonk.speedX;
-            damage= chonk.damage;
-        }
-        
-        if(P1class==3)
-        {
-            HP= bob.HP;
-            speedX=bob.speedX;
-            damage= bob.damage;
-        }
-        
-        if(P1class==4)
-        {
-            HP= glass.HP;
-            speedX=glass.speedX;
-            damage= glass.damage;
         }
 
     }
