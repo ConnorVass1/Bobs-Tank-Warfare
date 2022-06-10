@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HP2 extends HPBars
 {
-    PlayerTwo p2= new PlayerTwo();
+    PlayerTwo p2= new PlayerTwo(0, 0);
     public void act()
     {
         while(p2.HP>0)
