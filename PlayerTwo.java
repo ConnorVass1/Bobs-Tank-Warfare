@@ -67,11 +67,6 @@ public class PlayerTwo extends Players
     public void bulletmovement()
     {
         FrameCount++;
-        if(getRotation() == 0 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 55);
-            FrameCount = 0;
-        }
         
         if(getRotation() == 90 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {

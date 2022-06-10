@@ -36,6 +36,7 @@ public class PlayerOne extends Players
         HPMechanics();
         bulletmovement();
         collision();
+        System.out.println(FrameCount);
         //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
 
     }
@@ -85,57 +86,17 @@ public class PlayerOne extends Players
     public void bulletmovement()
     {
         FrameCount++;
-        if(getRotation() == 0 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        if(Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 55);
-            FrameCount = 0;
+             Bullet bullet = new Bullet(5, 5);
+             getWorld().addObject(bullet, getX() + 50, getY());
+             bullet.setRotation(getRotation());
+             bullet.move(5);
+             FrameCount = 0;
         }
         
-        if(getRotation() == 90 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(5, 0), getX() + 55, getY());
-            FrameCount = 0;
-        }
         
-        if(getRotation() == 180 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 55);
-            FrameCount = 0;
-        }
         
-        if(getRotation() == 270 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-5, 0), getX() - 55, getY());
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 45 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, -3), getX() + 55, getY() - 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 135 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, 3), getX() + 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 225 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, 3), getX() - 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 315 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, -3), getX() - 55, getY() - 55);
-            FrameCount = 0;
-        
-        }
         
 
         
