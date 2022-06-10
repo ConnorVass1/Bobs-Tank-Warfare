@@ -16,6 +16,8 @@ public class PlayerTwo extends Players
     int HPFrameCount;
     int P1class;
     int P2class;
+    int stopspeedX;
+    int stopspeedY;
     //class initializations
     AmogusMKII amog= new AmogusMKII();
     BigChonkers chonk= new BigChonkers();
@@ -40,57 +42,25 @@ public class PlayerTwo extends Players
     
     public void movement()
     {
-        speedX = 0;
-        speedY = 0;
-        if(Greenfoot.isKeyDown("Left"))
-        {
-            speedX = -5;
-            setRotation(270);
-        }
+        stopspeedX = speedX - speedX;
+        stopspeedY = speedY - speedY;
+        
         if(Greenfoot.isKeyDown("Right"))
         {
-            speedX = 5;
-            setRotation(90);
+            turn(speedX);
         }
-        if(Greenfoot.isKeyDown("Down"))
+        if(Greenfoot.isKeyDown("Left"))
         {
-            speedY = 5;
-            setRotation(180);
+            turn(-speedX);
         }
         if(Greenfoot.isKeyDown("Up"))
         {
-            speedY = -5;
-            setRotation(0);
+            move(speedX);
         }
-        
-        if(Greenfoot.isKeyDown("Up") && Greenfoot.isKeyDown("Right"))
+        if(Greenfoot.isKeyDown("Down"))
         {
-            speedX = 3;
-            speedY = -3;
-            setRotation(45);
+            move(-speedX);
         }
-        
-        if(Greenfoot.isKeyDown("Up") && Greenfoot.isKeyDown("Left"))
-        {
-            speedX = -3;
-            speedY = -3;
-            setRotation(315);
-        }
-        
-        if(Greenfoot.isKeyDown("Down") && Greenfoot.isKeyDown("Right"))
-        {
-            speedX = 3;
-            speedY = 3;
-            setRotation(135);
-        }
-        
-        if(Greenfoot.isKeyDown("Down") && Greenfoot.isKeyDown("Left"))
-        {
-            speedX = -3;
-            speedY = 3;
-            setRotation(225);
-        }
-        setLocation(getX() + speedX, getY() + speedY);
     
     }
     
