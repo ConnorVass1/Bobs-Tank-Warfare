@@ -54,7 +54,21 @@ public class PlayerOne extends Players
         if (s2!=null) 
         {
             setLocation(s2.getX()-s2.getImage().getWidth()/2
-            -getImage().getWidth()/2,getY());
+            -getImage().getWidth()/2,getY());   
+        }
+        
+        Wall pf=(Wall) getOneObjectAtOffset(0, getImage().getHeight()/2, Wall.class);
+        if (pf!=null) 
+        {
+            setLocation(getX(),pf.getY()-pf.getImage().getHeight()/2
+            -getImage().getHeight()/2+1);
+        }
+        
+        Wall sg=(Wall) getOneObjectAtOffset(0,- getImage().getHeight()/2, Wall.class);
+        if (sg!=null) 
+        {
+            setLocation(getX(), sg.getY()+sg.getImage().getHeight()/2
+            +getImage().getHeight()/2);
         }
     }
     
