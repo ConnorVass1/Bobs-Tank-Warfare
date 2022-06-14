@@ -8,34 +8,29 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bullet extends Actor
 {
-    int FrameCount;
     int deltaX;
     int deltaY;
+    int FrameCount;
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        setLocation(getX() + deltaX, getY() + deltaY);
+        move(deltaX);
         if(Bullet.class!=null &&touchingcond() == true)
         {
             FrameCount++;
-            if(FrameCount > 6)
+            if(FrameCount > 10)
             {
-                getWorld().removeObject(this);
+                getWorld().removeObject(this);  
                 FrameCount = 0;
-            }
-        }   
+            }   
+        }
     }
     
     public boolean touchingcond()
     {
-        if(isTouching(PlayerOne.class))
-        {
-            return true;
-        }
-        
         if(isTouching(PlayerTwo.class))
         {
             return true;

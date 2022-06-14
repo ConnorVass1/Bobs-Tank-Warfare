@@ -16,8 +16,10 @@ public class PlayerTwo extends Players
     int HPFrameCount;
     int P1class;
     int P2class;
-    
-    
+
+    int stopspeedX;
+    int stopspeedY;
+
     //class initializations
     AmogusMKII amog= new AmogusMKII();
     BigChonkers chonk= new BigChonkers();
@@ -83,113 +85,38 @@ public class PlayerTwo extends Players
     
     public void movement()
     {
-        speedX = 0;
-        speedY = 0;
-        if(Greenfoot.isKeyDown("Left"))
-        {
-            speedX = -5;
-            setRotation(270);
-        }
+        stopspeedX = speedX - speedX;
+        stopspeedY = speedY - speedY;
+        
         if(Greenfoot.isKeyDown("Right"))
         {
-            speedX = 5;
-            setRotation(90);
+            turn(speedX);
         }
-        if(Greenfoot.isKeyDown("Down"))
+        if(Greenfoot.isKeyDown("Left"))
         {
-            speedY = 5;
-            setRotation(180);
+            turn(-speedX);
         }
         if(Greenfoot.isKeyDown("Up"))
         {
-            speedY = -5;
-            setRotation(0);
+            move(speedX);
         }
-        
-        if(Greenfoot.isKeyDown("Up") && Greenfoot.isKeyDown("Right"))
+        if(Greenfoot.isKeyDown("Down"))
         {
-            speedX = 3;
-            speedY = -3;
-            setRotation(45);
+            move(-speedX);
         }
-        
-        if(Greenfoot.isKeyDown("Up") && Greenfoot.isKeyDown("Left"))
-        {
-            speedX = -3;
-            speedY = -3;
-            setRotation(315);
-        }
-        
-        if(Greenfoot.isKeyDown("Down") && Greenfoot.isKeyDown("Right"))
-        {
-            speedX = 3;
-            speedY = 3;
-            setRotation(135);
-        }
-        
-        if(Greenfoot.isKeyDown("Down") && Greenfoot.isKeyDown("Left"))
-        {
-            speedX = -3;
-            speedY = 3;
-            setRotation(225);
-        }
-        setLocation(getX() + speedX, getY() + speedY);
     
     }
     
     public void bulletmovement()
     {
         FrameCount++;
-        if(getRotation() == 0 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
+        
+        if(Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 55);
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 90 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(5, 0), getX() + 55, getY());
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 180 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 55);
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 270 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-5, 0), getX() - 55, getY());
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 45 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, -3), getX() + 55, getY() - 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 135 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, 3), getX() + 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 225 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, 3), getX() - 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 315 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, -3), getX() - 55, getY() - 55);
-            FrameCount = 0;
-        
+             Bullet2 bullet2 = new Bullet2(5,0);
+             bullet2.setRotation(getRotation());
+             getWorld().addObject(bullet2, getX(), getY());
+             FrameCount = 0;
         }
     }
     
