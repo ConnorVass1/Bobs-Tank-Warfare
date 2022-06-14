@@ -11,8 +11,7 @@ public class PlayerOne extends Players
     int PowerUpframecount=0;
     int P1class;
     int P2class;
-    int stopspeedX;
-    int stopspeedY;
+    
     
     
     AmogusMKII amog= new AmogusMKII();
@@ -77,8 +76,8 @@ public class PlayerOne extends Players
     
     public void movement()
     {
-        stopspeedX = speedX - speedX;
-        stopspeedY = speedY - speedY;
+        //stopspeedX = speedX - speedX;
+        //stopspeedY = speedY - speedY;
         
         if(Greenfoot.isKeyDown("D"))
         {
@@ -106,21 +105,16 @@ public class PlayerOne extends Players
         {
              Bullet bullet = new Bullet(5,0);
              bullet.setRotation(getRotation());
-             getWorld().addObject(bullet, getX() + 25, getY() + 25);
+             getWorld().addObject(bullet, getX(), getY());
+             
              FrameCount = 0;
         }
-        
-        
-        
-        
-
-        
     }
     
     public void HPMechanics()
     {
         HPFrameCount++;
-        if(isTouching(Bullet.class) && HPFrameCount > 96)
+        if(isTouching(Bullet2.class) && HPFrameCount > 96)
         {
             HP = HP - 1;
             HPFrameCount = 0;

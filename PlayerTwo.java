@@ -68,11 +68,11 @@ public class PlayerTwo extends Players
     {
         FrameCount++;
         
-        if(Greenfoot.isKeyDown("Shift") && FrameCount > 30)
+        if(Greenfoot.isKeyDown("Enter") && FrameCount > 30)
         {
-             Bullet bullet = new Bullet(5,0);
-             bullet.setRotation(getRotation());
-             getWorld().addObject(bullet, getX() - 25, getY() + 25);
+             Bullet2 bullet2 = new Bullet2(5,0);
+             bullet2.setRotation(getRotation());
+             getWorld().addObject(bullet2, getX(), getY());
              FrameCount = 0;
         }
     }
