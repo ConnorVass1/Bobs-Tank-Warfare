@@ -17,7 +17,7 @@ public class Bullet extends Actor
      */
     public void act()
     {
-        setLocation(getX() + deltaX, getY() + deltaY);
+        move(deltaX);
         if(Bullet.class!=null &&touchingcond() == true)
         {
             FrameCount++;

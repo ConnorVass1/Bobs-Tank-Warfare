@@ -68,50 +68,12 @@ public class PlayerTwo extends Players
     {
         FrameCount++;
         
-        if(getRotation() == 90 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
+        if(Greenfoot.isKeyDown("Shift") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(5, 0), getX() + 55, getY());
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 180 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 55);
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 270 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-5, 0), getX() - 55, getY());
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 45 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, -3), getX() + 55, getY() - 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 135 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, 3), getX() + 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 225 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, 3), getX() - 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 315 && Greenfoot.isKeyDown("Enter") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, -3), getX() - 55, getY() - 55);
-            FrameCount = 0;
-        
+             Bullet bullet = new Bullet(5,0);
+             bullet.setRotation(getRotation());
+             getWorld().addObject(bullet, getX() - 25, getY() + 25);
+             FrameCount = 0;
         }
     }
     

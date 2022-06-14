@@ -88,10 +88,9 @@ public class PlayerOne extends Players
         FrameCount++;
         if(Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-             Bullet bullet = new Bullet(5, 5);
-             getWorld().addObject(bullet, getX() + 50, getY());
+             Bullet bullet = new Bullet(5,0);
              bullet.setRotation(getRotation());
-             bullet.move(5);
+             getWorld().addObject(bullet, getX() + 25, getY() + 25);
              FrameCount = 0;
         }
         
