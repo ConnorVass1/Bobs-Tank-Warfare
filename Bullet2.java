@@ -1,29 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class Bullet2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Actor
+public class Bullet2 extends Actor
 {
     int deltaX;
     int deltaY;
     int FrameCount;
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
+     * Act - do whatever the Bullet2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
         move(deltaX);
-        if(Bullet.class!=null &&touchingcond() == true)
+        if(Bullet2.class!=null &&touchingcond() == true)
         {
             FrameCount++;
             if(FrameCount > 10)
             {
-                getWorld().removeObject(this);  
+                getWorld().removeObject(this);
                 FrameCount = 0;
             }   
         }
@@ -31,11 +31,11 @@ public class Bullet extends Actor
     
     public boolean touchingcond()
     {
-        if(isTouching(PlayerTwo.class))
+        if(isTouching(PlayerOne.class))
         {
             return true;
         }
-        
+               
         if(getX() > getWorld().getWidth()-getImage().getWidth())
         {
             return true;
@@ -64,7 +64,7 @@ public class Bullet extends Actor
     }
     
     
-    public Bullet(int nDeltaX, int nDeltaY)
+    public Bullet2(int nDeltaX, int nDeltaY)
     {
         deltaX= nDeltaX;
         deltaY= nDeltaY;
