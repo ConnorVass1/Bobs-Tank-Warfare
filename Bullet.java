@@ -27,6 +27,11 @@ public class Bullet extends Actor
                 FrameCount = 0;
             }   
         }
+        
+        if (isTouching(Wall.class)||isTouching(Players.class))
+        {
+            getWorld().addObject(new Explosion(), getX(), getY());
+        }
     }
     
     public boolean touchingcond()
