@@ -8,17 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HP2 extends HPBars
 {
-    PlayerTwo p2= new PlayerTwo(0, 0);
+    int HP;
+    PlayerTwo player;
+    public HP2(PlayerTwo p2)
+    {
+        player= p2;
+    }
+    
+    
     public void act()
     {
-        while(p2.HP>0)
+        if(player.HP>0)
         {
-            String image="folder/hp"+p2.HP+".png";
-            setImage("image");
+            String image="hearts/"+player.HP+".png";
+            setImage(image);
         }
-        if (p2.HP==0)
+        else if (player.HP==0)
         {
-            setImage("folder/hp0.png");
+            setImage("folder/0.png");
         }
     }
 }

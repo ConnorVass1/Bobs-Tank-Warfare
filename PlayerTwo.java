@@ -86,6 +86,13 @@ public class PlayerTwo extends Players
             HPFrameCount = 0;
         }
         
+        if (HP==0)
+        {
+            getWorld().addObject(new PlayerOneWins(), 500, 300);
+        }
+        
+        
+        
         
     }
     

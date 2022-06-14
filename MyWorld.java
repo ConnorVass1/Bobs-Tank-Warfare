@@ -22,7 +22,21 @@ public class MyWorld extends World
         PlayerOne playerone = new PlayerOne(selection1, selection2);
 
         addObject(playerone, 100, 300);
+        
+        addObject(new HP1(playerone), 100, 900);
+        
+        
+        GreenfootSound music = new GreenfootSound("Carefree_Kevin_MacLeod_No_Copyri_(getmp3.pro).mp3");
+         //to loop the song when it stops
+        if(!music.isPlaying())
+        {
+            music.play();
+        }
+                        
     }
+    
+    
+    
     
     
 }
