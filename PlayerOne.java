@@ -11,7 +11,8 @@ public class PlayerOne extends Players
     int PowerUpframecount=0;
     int P1class;
     int P2class;
-    
+    int stopspeedX;
+    int stopspeedY;
     
     
     AmogusMKII amog= new AmogusMKII();
@@ -37,8 +38,9 @@ public class PlayerOne extends Players
         HPMechanics();
         bulletmovement();
         collision();
-        
-        System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
+        System.out.println(FrameCount);
+        //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
+
     }
     
     public void collision()
@@ -75,116 +77,41 @@ public class PlayerOne extends Players
     
     public void movement()
     {
-        speedX = 0;
-        speedY = 0;
-        if(Greenfoot.isKeyDown("a"))
-        {
-            speedX = -5;
-            setRotation(270);
-        }
-        if(Greenfoot.isKeyDown("d"))
-        {
-            speedX = 5;
-            setRotation(90);
-        }
-        if(Greenfoot.isKeyDown("s"))
-        {
-            speedY = 5;
-            setRotation(180);
-        }
-        if(Greenfoot.isKeyDown("w"))
-        {
-            speedY = -5;
-            setRotation(0);
-        }
+        stopspeedX = speedX - speedX;
+        stopspeedY = speedY - speedY;
         
-        if(Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("d"))
+        if(Greenfoot.isKeyDown("D"))
         {
-            speedX = 3;
-            speedY = -3;
-            setRotation(45);
+            turn(speedX);
         }
-        
-        if(Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("a"))
+        if(Greenfoot.isKeyDown("A"))
         {
-            speedX = -3;
-            speedY = -3;
-            setRotation(315);
+            turn(-speedX);
         }
-        
-        if(Greenfoot.isKeyDown("s") && Greenfoot.isKeyDown("d"))
+        if(Greenfoot.isKeyDown("W"))
         {
-            speedX = 3;
-            speedY = 3;
-            setRotation(135);
+            move(speedX);
         }
-        
-        if(Greenfoot.isKeyDown("s") && Greenfoot.isKeyDown("a"))
+        if(Greenfoot.isKeyDown("S"))
         {
-            speedX = -3;
-            speedY = 3;
-            setRotation(225);
+            move(-speedX);
         }
-        
-        setLocation(getX() + speedX, getY() + speedY);
-    
     }
     
     
     public void bulletmovement()
     {
         FrameCount++;
-        if(getRotation() == 0 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
+        if(Greenfoot.isKeyDown("Space") && FrameCount > 30)
         {
-            getWorld().addObject(new Bullet(0, -5), getX(), getY() - 55);
-            FrameCount = 0;
+             Bullet bullet = new Bullet(5,0);
+             bullet.setRotation(getRotation());
+             getWorld().addObject(bullet, getX() + 25, getY() + 25);
+             FrameCount = 0;
         }
         
-        if(getRotation() == 90 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(5, 0), getX() + 55, getY());
-            FrameCount = 0;
-        }
         
-        if(getRotation() == 180 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(0, 5), getX(), getY() + 55);
-            FrameCount = 0;
-        }
         
-        if(getRotation() == 270 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-5, 0), getX() - 55, getY());
-            FrameCount = 0;
-        }
-        
-        if(getRotation() == 45 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, -3), getX() + 55, getY() - 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 135 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(3, 3), getX() + 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 225 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, 3), getX() - 55, getY() + 55);
-            FrameCount = 0;
-        
-        }
-        
-        if(getRotation() == 315 && Greenfoot.isKeyDown("Space") && FrameCount > 30)
-        {
-            getWorld().addObject(new Bullet(-3, -3), getX() - 55, getY() - 55);
-            FrameCount = 0;
-        
-        }
         
 
         
@@ -246,6 +173,7 @@ public class PlayerOne extends Players
         {
             HP= amog.HP;
             speedX=amog.speedX;
+            speedY=amog.speedX;
             damage= amog.damage;
         }
         
@@ -253,6 +181,7 @@ public class PlayerOne extends Players
         {
             HP= chonk.HP;
             speedX=chonk.speedX;
+            speedY=chonk.speedX;
             damage= chonk.damage;
         }
         
@@ -260,6 +189,7 @@ public class PlayerOne extends Players
         {
             HP= bob.HP;
             speedX=bob.speedX;
+            speedY=bob.speedX;
             damage= bob.damage;
         }
         
@@ -267,6 +197,7 @@ public class PlayerOne extends Players
         {
             HP= glass.HP;
             speedX=glass.speedX;
+            speedY=glass.speedX;
             damage= glass.damage;
         }
     }
