@@ -26,7 +26,7 @@ public class MyWorld extends World
         addObject(new HP1(playerone), 100, 900);
         
         
-        GreenfootSound music = new GreenfootSound("Carefree_Kevin_MacLeod_No_Copyri_(getmp3.pro).mp3");
+        GreenfootSound music = new GreenfootSound("BFG Division.mp3");
          //to loop the song when it stops
         if(!music.isPlaying())
         {
