@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlayerOne extends Players
 {
     //String setImage("folder/hp"+player.hp+".png"):
+    
     int HP=0;
     int speedX = 0;
     int speedY = 0;
@@ -20,25 +21,33 @@ public class PlayerOne extends Players
     GlassCannon glass= new GlassCannon();
     
     
-    MyWorld myworld = (MyWorld) getWorld();
+    MyWorld myworld;
     
     public PlayerOne(int sel, int sel2)
     {
         P1class=sel;
         P2class=sel2;
         setclass();
+       
     }
     
+     protected void addedToWorld​(World world)
+    {
+        myworld= (MyWorld) world;
+    }
    
     public void act()
     {
-        
+        if (HP==0||myworld.player2.HP==0)
+        {
+            return;
+        }
         movement();
         HPMechanics();
         bulletmovement();
         collision();
         
-        System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
+        
     }
     
     public void collision()
@@ -202,6 +211,7 @@ public class PlayerOne extends Players
         if (HP==0)
         {
             getWorld().addObject(new PlayerTwoWins(), 500, 300);
+            
         }
         
         
