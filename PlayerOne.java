@@ -24,6 +24,8 @@ public class PlayerOne extends Players
     
     MyWorld myworld;
     
+    
+    
     public PlayerOne(int sel, int sel2)
     {
         P1class=sel;
@@ -32,11 +34,13 @@ public class PlayerOne extends Players
        
     }
     
+    
      protected void addedToWorld​(World world)
     {
         myworld= (MyWorld) world;
     }
-   
+    
+    
     public void act()
     {
         if (HP==0||myworld.player2.HP==0)
@@ -47,11 +51,11 @@ public class PlayerOne extends Players
         HPMechanics();
         bulletmovement();
         collision();
-
+        PowerUps();
         Knockback();
-        System.out.println(FrameCount);
+        System.out.println(HP);
         //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
-
+        PlayerOne player2;
 
     }
     
@@ -129,7 +133,7 @@ public class PlayerOne extends Players
         HPFrameCount++;
         if(isTouching(Bullet2.class) && HPFrameCount > 96)
         {
-            HP = HP - 1;
+            HP = HP - myworld.player2.damage;
             HPFrameCount = 0;
         }
         
@@ -140,8 +144,11 @@ public class PlayerOne extends Players
         }
     }
     
+    
+    
     public void PowerUps()
     {
+        
         if(isTouching(Heal.class))
         {
             HP = HP + 1;
