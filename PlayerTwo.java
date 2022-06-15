@@ -27,6 +27,11 @@ public class PlayerTwo extends Players
     GlassCannon glass= new GlassCannon();
     
     MyWorld myworld;
+    PlayerOne player1;
+    public PlayerTwo(PlayerOne p1)
+    {
+        player1= p1;
+    }
     public PlayerTwo(int sel, int sel2)
     {
         P1class=sel;
@@ -157,7 +162,7 @@ public class PlayerTwo extends Players
         HPFrameCount++;
         if(isTouching(Bullet.class) && HPFrameCount > 96)
         {
-            HP = HP - 1;
+            HP = HP - player1.damage;
             HPFrameCount = 0;
         }
         

@@ -23,6 +23,11 @@ public class PlayerOne extends Players
     
     
     MyWorld myworld;
+    PlayerTwo player2;
+    public PlayerOne(PlayerTwo p2)
+    {
+        player2= p2;
+    }
     
     public PlayerOne(int sel, int sel2)
     {
@@ -129,7 +134,7 @@ public class PlayerOne extends Players
         HPFrameCount++;
         if(isTouching(Bullet2.class) && HPFrameCount > 96)
         {
-            HP = HP - damage;
+            HP = HP - player2.damage;
             HPFrameCount = 0;
         }
         
