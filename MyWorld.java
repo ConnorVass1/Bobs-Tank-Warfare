@@ -25,8 +25,8 @@ public class MyWorld extends World
         player1= new PlayerOne(selection1, selection2);
         addObject(player1, 100, 300);
         
-        addObject(new HP1(player1), 100, 900);
-        
+        addObject(new HP1(player1), 100, 100);
+        addObject(new HP2(player2), 800, 100);
         
         GreenfootSound music = new GreenfootSound("BFG Division.mp3");
          //to loop the song when it stops

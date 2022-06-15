@@ -22,7 +22,7 @@ public class Bullet extends Actor
 
             touchytouchycounter++;
             if (Bullet.class!=null&touchytouchy==0&&touchingcond() == true)
-=======
+
 
             if(FrameCount > 5)
 
@@ -34,7 +34,7 @@ public class Bullet extends Actor
             }
 
             if(FrameCount > 2)
-=======
+
             if(FrameCount > 10)
 
 
