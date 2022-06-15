@@ -25,7 +25,7 @@ public class HP2 extends HPBars
         }
         else if (player.HP==0)
         {
-            setImage("folder/0.png");
+            setImage("0.png");
         }
     }
 }

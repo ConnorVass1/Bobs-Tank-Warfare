@@ -192,12 +192,12 @@ dependency8.type=UsesDependency
 dependency9.from=Player2Selection
 dependency9.to=AmogusMKII
 dependency9.type=UsesDependency
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=275
-editor.fx.0.y=-4
+editor.fx.0.height=744
+editor.fx.0.width=1382
+editor.fx.0.x=-8
+editor.fx.0.y=-8
 height=744
-package.numDependencies=61
+
 package.numTargets=28
 project.charset=UTF-8
 publish.hasSource=false

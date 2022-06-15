@@ -23,6 +23,7 @@ public class Bullet extends Actor
             touchytouchycounter++;
             if (Bullet.class!=null&touchytouchy==0&&touchingcond() == true)
 
+
             if(FrameCount > 5)
 
             if (touchytouchy==0&&Bullet.class!=null&&isTouching(Wall.class)||isTouching(Players.class))
@@ -32,7 +33,15 @@ public class Bullet extends Actor
                 touchytouchy=1;
             }
 
+
+            if(FrameCount > 2)
+
+            if(FrameCount > 10)
+
+
+
             if(FrameCount > 5)
+
             {
                 getWorld().removeObject(this);  
                 FrameCount = 0;
