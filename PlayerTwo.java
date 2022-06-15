@@ -16,29 +16,76 @@ public class PlayerTwo extends Players
     int HPFrameCount;
     int P1class;
     int P2class;
+
     int stopspeedX;
     int stopspeedY;
+
     //class initializations
     AmogusMKII amog= new AmogusMKII();
     BigChonkers chonk= new BigChonkers();
     Bob bob= new Bob();
     GlassCannon glass= new GlassCannon();
     
-    
+    MyWorld myworld;
     public PlayerTwo(int sel, int sel2)
     {
         P1class=sel;
         P2class=sel2;
+        setclass();
+    }
+    
+    protected void addedToWorld​(World world)
+    {
+        myworld= (MyWorld) world;
     }
     
     public void act()
     {
-        setclass();
+        if (HP==0||myworld.player1.HP==0)
+        {
+            return;
+        }
         movement();
-        bulletmovement();
         HPMechanics();
+
         Knockback();
         System.out.println("stats are:HP "+HP+"SPeed"+speedX+"Damage"+damage);
+
+        bulletmovement();
+        collision();
+        
+    }
+    
+    public void collision()
+    {
+        Wall s1=(Wall) getOneObjectAtOffset(0- getImage().getWidth()/2,0, Wall.class);
+        if (s1!=null) 
+        {
+            setLocation(s1.getX()+s1.getImage().getWidth()/2
+            +getImage().getWidth()/2,getY());
+        }
+        
+        Wall s2=(Wall) getOneObjectAtOffset(0+ getImage().getWidth()/2,0, Wall.class);
+        if (s2!=null) 
+        {
+            setLocation(s2.getX()-s2.getImage().getWidth()/2
+            -getImage().getWidth()/2,getY());   
+        }
+        
+        Wall pf=(Wall) getOneObjectAtOffset(0, getImage().getHeight()/2, Wall.class);
+        if (pf!=null) 
+        {
+            setLocation(getX(),pf.getY()-pf.getImage().getHeight()/2
+            -getImage().getHeight()/2+1);
+        }
+        
+        Wall sg=(Wall) getOneObjectAtOffset(0,- getImage().getHeight()/2, Wall.class);
+        if (sg!=null) 
+        {
+            setLocation(getX(), sg.getY()+sg.getImage().getHeight()/2
+            +getImage().getHeight()/2);
+        }
+
     }
     
     public void movement()
