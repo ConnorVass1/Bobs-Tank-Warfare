@@ -9,6 +9,7 @@ public class PlayerOne extends Players
     int FrameCount = 0;
     int HPFrameCount;
     int PowerUpframecount=0;
+    int KnockbackFrameCount = 0;
     int P1class;
     int P2class;
     
@@ -37,6 +38,7 @@ public class PlayerOne extends Players
         HPMechanics();
         bulletmovement();
         collision();
+        Knockback();
         System.out.println(FrameCount);
         //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
 
@@ -124,9 +126,6 @@ public class PlayerOne extends Players
         {
             getWorld().addObject(new PlayerTwoWins(), 500, 300);
         }
-        
-        
-        
     }
     
     public void PowerUps()
@@ -195,4 +194,32 @@ public class PlayerOne extends Players
             damage= glass.damage;
         }
     }
+    
+    public void Knockback()
+    {
+        
+        Bullet2 a1=(Bullet2) getOneObjectAtOffset(0 + getImage().getWidth()/2,0, Bullet2.class);
+        if (a1!=null) 
+        {
+            setLocation(getX() - speedX, getY());  
+        }
+        Bullet2 a2=(Bullet2) getOneObjectAtOffset(0 - getImage().getWidth()/2,0, Bullet2.class);
+        if (a2!=null) 
+        {
+            setLocation(getX() + speedX, getY());  
+        }
+        Bullet2 a3=(Bullet2) getOneObjectAtOffset(0, 0 - getImage().getHeight()/2, Bullet2.class);
+        if (a3!=null) 
+        {
+            setLocation(getX(), getY() + speedX);  
+        }
+        Bullet2 a4=(Bullet2) getOneObjectAtOffset(0, 0 + getImage().getHeight()/2, Bullet2.class);
+        if (a4!=null) 
+        {
+            setLocation(getX(), getY() - speedX);  
+        }
+        
+        
+    }
+    
 }

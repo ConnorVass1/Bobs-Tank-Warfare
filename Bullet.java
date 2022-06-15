@@ -21,7 +21,7 @@ public class Bullet extends Actor
         if(Bullet.class!=null &&touchingcond() == true)
         {
             FrameCount++;
-            if(FrameCount > 10)
+            if(FrameCount > 5)
             {
                 getWorld().removeObject(this);  
                 FrameCount = 0;
