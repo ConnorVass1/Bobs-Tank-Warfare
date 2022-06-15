@@ -31,6 +31,11 @@ public class Bullet2 extends Actor
             }   
         }
 
+        if (isTouching(Wall.class)||isTouching(Players.class))
+        {
+            getWorld().addObject(new Explosion(), getX(), getY());
+        }
+
     }
     
     public boolean touchingcond()
