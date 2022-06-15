@@ -19,13 +19,25 @@ public class Bullet extends Actor
         if(Bullet.class!=null &&touchingcond() == true)
         {
             FrameCount++;
+
             touchytouchycounter++;
             if (Bullet.class!=null&touchytouchy==0&&touchingcond() == true)
+=======
+
+            if(FrameCount > 5)
+
+            if (touchytouchy==0&&Bullet.class!=null&&isTouching(Wall.class)||isTouching(Players.class))
+
             {
                 explode();
                 touchytouchy=1;
             }
+
             if(FrameCount > 2)
+=======
+            if(FrameCount > 10)
+
+
             {
                 getWorld().removeObject(this);  
                 FrameCount = 0;

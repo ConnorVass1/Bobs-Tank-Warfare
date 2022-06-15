@@ -47,6 +47,10 @@ public class PlayerTwo extends Players
         }
         movement();
         HPMechanics();
+
+        Knockback();
+        System.out.println("stats are:HP "+HP+"SPeed"+speedX+"Damage"+damage);
+
         bulletmovement();
         collision();
         
@@ -81,6 +85,7 @@ public class PlayerTwo extends Players
             setLocation(getX(), sg.getY()+sg.getImage().getHeight()/2
             +getImage().getHeight()/2);
         }
+
     }
     
     public void movement()
@@ -168,5 +173,32 @@ public class PlayerTwo extends Players
             speedX=glass.speedX;
             damage= glass.damage;
         }
+    }
+    
+    public void Knockback()
+    {
+        
+        Bullet a1=(Bullet) getOneObjectAtOffset(0 + getImage().getWidth()/2,0, Bullet.class);
+        if (a1!=null) 
+        {
+            setLocation(getX() - speedX, getY());  
+        }
+        Bullet a2=(Bullet) getOneObjectAtOffset(0 - getImage().getWidth()/2,0, Bullet.class);
+        if (a2!=null) 
+        {
+            setLocation(getX() + speedX, getY());  
+        }
+        Bullet a3=(Bullet) getOneObjectAtOffset(0, 0 - getImage().getHeight()/2, Bullet.class);
+        if (a3!=null) 
+        {
+            setLocation(getX(), getY() + speedX);  
+        }
+        Bullet a4=(Bullet) getOneObjectAtOffset(0, 0 + getImage().getHeight()/2, Bullet.class);
+        if (a4!=null) 
+        {
+            setLocation(getX(), getY() - speedX);  
+        }
+        
+        
     }
 }
