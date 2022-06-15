@@ -11,27 +11,32 @@ public class Bullet extends Actor
     int deltaX;
     int deltaY;
     int FrameCount;
-    /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int touchytouchy=0;
+
     public void act()
     {
         move(deltaX);
         if(Bullet.class!=null &&touchingcond() == true)
         {
             FrameCount++;
+            if (touchytouchy==0&&Bullet.class!=null&&isTouching(Wall.class)||isTouching(Players.class))
+            {
+                getWorld().addObject(new Explosion(), getX(), getY());
+            }
             if(FrameCount > 10)
             {
                 getWorld().removeObject(this);  
                 FrameCount = 0;
+                touchytouchy=0;
             }   
         }
+
         
         if (isTouching(Wall.class)||isTouching(Players.class))
         {
             getWorld().addObject(new Explosion(), getX(), getY());
         }
+
     }
     
     public boolean touchingcond()
