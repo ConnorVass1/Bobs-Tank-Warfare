@@ -13,10 +13,11 @@ public class MyWorld extends World
     int p2;
     PlayerTwo player2;
     PlayerOne player1;
+    int PowerUpFrameCount;
+    
     public MyWorld(int selection1, int selection2)
     {    
         super(1000, 600, 1);
-
         int p1=selection1;
         int p2=selection2;
         
@@ -33,11 +34,37 @@ public class MyWorld extends World
         if(!music.isPlaying())
         {
             music.play();
-        }
-                        
+        }    
+        
     }
     
-    
+    public void act()
+    {
+        PowerUpFrameCount++;
+        if(PowerUpFrameCount > 500)
+        {
+            int randomNumber = Greenfoot.getRandomNumber(3);
+            int randomX = Greenfoot.getRandomNumber(getWidth());
+            int randomY = Greenfoot.getRandomNumber(getHeight());
+            
+            
+            if (randomNumber == 0)
+            {
+                addObject(new Damage(), randomX, randomY);
+            }
+            else if (randomNumber == 1)
+            {
+                addObject(new Damage(), randomX, randomY);
+            }
+            else if (randomNumber == 2)
+            {
+                addObject(new Damage(), randomX, randomY);
+            }
+            PowerUpFrameCount = 0;
+        }
+        
+        
+    }
     
     
     
