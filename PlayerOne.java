@@ -23,11 +23,8 @@ public class PlayerOne extends Players
     
     
     MyWorld myworld;
-    PlayerTwo player2;
-    public PlayerOne(PlayerTwo p2)
-    {
-        player2= p2;
-    }
+    
+    
     
     public PlayerOne(int sel, int sel2)
     {
@@ -37,6 +34,11 @@ public class PlayerOne extends Players
        
     }
     
+    public PlayerOne(PlayerTwo p2)
+    {
+        player2= p2;
+    }
+    PlayerTwo player2;
      protected void addedToWorld​(World world)
     {
         myworld= (MyWorld) world;

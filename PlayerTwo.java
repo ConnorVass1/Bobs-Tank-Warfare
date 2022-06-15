@@ -27,11 +27,8 @@ public class PlayerTwo extends Players
     GlassCannon glass= new GlassCannon();
     
     MyWorld myworld;
-    PlayerOne player1;
-    public PlayerTwo(PlayerOne p1)
-    {
-        player1= p1;
-    }
+    
+    
     public PlayerTwo(int sel, int sel2)
     {
         P1class=sel;
@@ -39,6 +36,11 @@ public class PlayerTwo extends Players
         setclass();
     }
     
+    public PlayerTwo(PlayerOne p1)
+    {
+        player1= p1;
+    }
+    PlayerOne player1;
     protected void addedToWorld​(World world)
     {
         myworld= (MyWorld) world;
