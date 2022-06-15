@@ -12,31 +12,41 @@ public class Bullet extends Actor
     int deltaY;
     int FrameCount;
     int touchytouchy=0;
-
+    int touchytouchycounter=0;
     public void act()
     {
         move(deltaX);
         if(Bullet.class!=null &&touchingcond() == true)
         {
             FrameCount++;
-            if (touchytouchy==0&&Bullet.class!=null&&isTouching(Wall.class)||isTouching(Players.class))
+            touchytouchycounter++;
+            if (Bullet.class!=null&touchytouchy==0&&touchingcond() == true)
             {
-                getWorld().addObject(new Explosion(), getX(), getY());
+                explode();
+                touchytouchy=1;
             }
-            if(FrameCount > 10)
+            if(FrameCount > 2)
             {
                 getWorld().removeObject(this);  
                 FrameCount = 0;
-                touchytouchy=0;
+                
             }   
         }
 
+        if(touchytouchycounter > 30)
+        {  
+            touchytouchycounter = 0;
+        } 
         
-        if (isTouching(Wall.class)||isTouching(Players.class))
+        
+    }
+    
+    public void explode()
+    {
+        if (Bullet.class!=null&&touchytouchy==0&&isTouching(Wall.class)||isTouching(PlayerTwo.class))
         {
             getWorld().addObject(new Explosion(), getX(), getY());
-        }
-
+        }  
     }
     
     public boolean touchingcond()
