@@ -213,22 +213,22 @@ public class PlayerOne extends Players
         Bullet2 a1=(Bullet2) getOneObjectAtOffset(0 + getImage().getWidth()/2,0, Bullet2.class);
         if (a1!=null) 
         {
-            setLocation(getX() - speedX, getY());  
+            setLocation(getX() - speedX/2, getY());  
         }
         Bullet2 a2=(Bullet2) getOneObjectAtOffset(0 - getImage().getWidth()/2,0, Bullet2.class);
         if (a2!=null) 
         {
-            setLocation(getX() + speedX, getY());  
+            setLocation(getX() + speedX/2, getY());  
         }
         Bullet2 a3=(Bullet2) getOneObjectAtOffset(0, 0 - getImage().getHeight()/2, Bullet2.class);
         if (a3!=null) 
         {
-            setLocation(getX(), getY() + speedX);  
+            setLocation(getX(), getY() + speedX/2);  
         }
         Bullet2 a4=(Bullet2) getOneObjectAtOffset(0, 0 + getImage().getHeight()/2, Bullet2.class);
         if (a4!=null) 
         {
-            setLocation(getX(), getY() - speedX);  
+            setLocation(getX(), getY() - speedX/2);  
         }
         
         

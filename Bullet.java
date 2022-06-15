@@ -33,10 +33,14 @@ public class Bullet extends Actor
                 touchytouchy=1;
             }
 
+
             if(FrameCount > 2)
 
             if(FrameCount > 10)
 
+
+
+            if(FrameCount > 5)
 
             {
                 getWorld().removeObject(this);  

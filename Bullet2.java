@@ -25,7 +25,7 @@ public class Bullet2 extends Actor
                 explode();
                 touchytouchy=1;
             }
-            if(FrameCount > 2)
+            if(FrameCount > 5)
             {
                 getWorld().removeObject(this);
                 FrameCount = 0;
