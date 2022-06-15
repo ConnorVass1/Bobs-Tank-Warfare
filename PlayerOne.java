@@ -34,15 +34,12 @@ public class PlayerOne extends Players
        
     }
     
-    public PlayerOne(PlayerTwo p2)
-    {
-        player2= p2;
-    }
-    PlayerTwo player2;
+    
      protected void addedToWorld​(World world)
     {
         myworld= (MyWorld) world;
     }
+    
     
     public void act()
     {
@@ -136,7 +133,7 @@ public class PlayerOne extends Players
         HPFrameCount++;
         if(isTouching(Bullet2.class) && HPFrameCount > 96)
         {
-            HP = HP - player2.damage;
+            HP = HP - myworld.player2.damage;
             HPFrameCount = 0;
         }
         
