@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Heal extends Powerups
 {
+    int Framecount;
     /**
      * Act - do whatever the Heal wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +21,7 @@ public class Heal extends Powerups
         }
         if (isTouching(Players.class))
         {
-            getWorld().removeObject(this);
+            getWorld().removeObject(this);   
         }
         
     }

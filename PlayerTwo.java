@@ -16,7 +16,7 @@ public class PlayerTwo extends Players
     int HPFrameCount;
     int P1class;
     int P2class;
-
+    int PowerUpframecount;
     int stopspeedX;
     int stopspeedY;
 
@@ -27,12 +27,15 @@ public class PlayerTwo extends Players
     GlassCannon glass= new GlassCannon();
     
     MyWorld myworld;
+    
+    
     public PlayerTwo(int sel, int sel2)
     {
         P1class=sel;
         P2class=sel2;
         setclass();
     }
+    
     
     protected void addedToWorld​(World world)
     {
@@ -53,7 +56,8 @@ public class PlayerTwo extends Players
 
         bulletmovement();
         collision();
-        
+        PowerUps();
+        System.out.println(PowerUpframecount);
     }
     
     public void collision()
@@ -86,6 +90,32 @@ public class PlayerTwo extends Players
             +getImage().getHeight()/2);
         }
 
+    }
+    
+    public void PowerUps()
+    {
+        if(isTouching(Heal.class))
+        {
+            HP = HP + 1;
+        }
+        
+        if(isTouching(Speed.class))
+        {
+            PowerUpframecount++;
+            if(PowerUpframecount<=100)
+            {
+                speedX=speedX+5;
+            }
+        }
+        
+        if(isTouching(Damage.class))
+        {
+            PowerUpframecount++;
+            if(PowerUpframecount<=100)
+            {
+                damage=damage+1;
+            }
+        }
     }
     
     public void movement()
@@ -130,7 +160,7 @@ public class PlayerTwo extends Players
         HPFrameCount++;
         if(isTouching(Bullet.class) && HPFrameCount > 96)
         {
-            HP = HP - 1;
+            HP = HP - myworld.player1.damage;
             HPFrameCount = 0;
         }
         
