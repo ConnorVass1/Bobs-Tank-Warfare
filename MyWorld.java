@@ -90,33 +90,12 @@ public class MyWorld extends World
         }
     }
 
-        PowerUpFrameCount++;
-        if(PowerUpFrameCount > 500)
-        {
-            int randomNumber = Greenfoot.getRandomNumber(3);
-            int randomX = Greenfoot.getRandomNumber(getWidth());
-            int randomY = Greenfoot.getRandomNumber(getHeight());
-            
-            
-            if (randomNumber == 0)
-            {
-                addObject(new Damage(), randomX, randomY);
-            }
-            else if (randomNumber == 1)
-            {
-                addObject(new Damage(), randomX, randomY);
-            }
-            else if (randomNumber == 2)
-            {
-                addObject(new Damage(), randomX, randomY);
-            }
-            PowerUpFrameCount = 0;
-        }
         
         
-    }
+        
+  }
     
 
     
     
-}
+
