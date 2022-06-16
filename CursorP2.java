@@ -99,10 +99,6 @@ public class CursorP2 extends Actor
             select2=4;
         }
         
-        if (Greenfoot.isKeyDown("enter")&&press==0)
-        {
-            System.out.println(""+select2);
-        }
     }
     
     

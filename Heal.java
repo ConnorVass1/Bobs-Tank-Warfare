@@ -14,9 +14,14 @@ public class Heal extends Powerups
      */
     public void act()
     {
+        if(isTouching(Wall.class))
+        {
+            setLocation(getX()+5, getY());
+        }
         if (isTouching(Players.class))
         {
             getWorld().removeObject(this);
         }
+        
     }
 }

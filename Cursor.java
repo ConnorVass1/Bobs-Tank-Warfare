@@ -88,10 +88,7 @@ public class Cursor extends Actor
             select=4;
         }
         
-        if (Greenfoot.isKeyDown("enter"))
-        {
-            System.out.println(""+select);
-        }
+        
     }
  
 }

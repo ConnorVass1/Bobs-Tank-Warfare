@@ -49,7 +49,7 @@ public class PlayerTwo extends Players
         HPMechanics();
 
         Knockback();
-        System.out.println("stats are:HP "+HP+"SPeed"+speedX+"Damage"+damage);
+        
 
         bulletmovement();
         collision();
