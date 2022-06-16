@@ -144,7 +144,7 @@ public class PlayerOne extends Players
         if (HP==0)
         {
             getWorld().addObject(new PlayerTwoWins(), 500, 300);
-            
+            return;
         }
     }
     
