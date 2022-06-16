@@ -53,7 +53,11 @@ public class PlayerOne extends Players
         collision();
         PowerUps();
         Knockback();
+
+        
+
         System.out.println(HP);
+
         //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
         PlayerOne player2;
 
