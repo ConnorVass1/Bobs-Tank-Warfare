@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AmogusMKII extends TankClasses
 {
     int HP=7;
-    int speedX = 8;
+    int speedX = 6;
     int speedY = 0;
     int damage=1;
     public void act()
