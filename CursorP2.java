@@ -10,6 +10,7 @@ public class CursorP2 extends Actor
     int select2=0;
     int  press= 0;
     int selectionplayerone;
+    
     public CursorP2(int sele)
     {
         selectionplayerone=sele;
@@ -33,7 +34,7 @@ public class CursorP2 extends Actor
         
         
         
-        
+        //creates world with tank selctions stored.
          if (selected2==true&&getWorld() instanceof Player2Selection)
         {
             Greenfoot.setWorld(new MyWorld(selectionplayerone,select2));          

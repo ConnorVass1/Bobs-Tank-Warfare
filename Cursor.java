@@ -27,7 +27,7 @@ public class Cursor extends Actor
         
         
         
-        
+        // after selection, sets to the next player 2 world.
         if (selected==true)
         {
             Greenfoot.setWorld(new Player2Selection(select));          
@@ -38,6 +38,7 @@ public class Cursor extends Actor
     
     public void movement()
     {
+        //moves cursor, and allows for tank selection
         if (Greenfoot.isKeyDown("a"))
         {
             dx=-5;
@@ -68,6 +69,7 @@ public class Cursor extends Actor
     
     public void classes()
     {
+        //determines what tank is selected
         if (Greenfoot.isKeyDown("enter")&&isTouching(AmogusMKII.class))
         {
             select=1;

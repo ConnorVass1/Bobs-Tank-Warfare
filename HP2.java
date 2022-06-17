@@ -15,7 +15,7 @@ public class HP2 extends HPBars
         player= p2;
     }
     
-    
+    //sets health bar depending on hp.
     public void act()
     {
         if(player.HP>0)

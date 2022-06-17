@@ -15,6 +15,7 @@ public class Bullet extends Actor
     int touchytouchycounter=0;
     public void act()
     {
+        //if a bullet touches a player, it sets the explosion effect, and removes the bullet.
         move(deltaX);
         if(Bullet.class!=null &&touchingcond() == true)
         {
@@ -24,7 +25,6 @@ public class Bullet extends Actor
             if (Bullet.class!=null&touchytouchy==0&&touchingcond() == true)
 
 
-            if(FrameCount > 5)
 
             if (touchytouchy==0&&Bullet.class!=null&&isTouching(Wall.class)||isTouching(Players.class))
 
@@ -32,13 +32,6 @@ public class Bullet extends Actor
                 explode();
                 touchytouchy=1;
             }
-
-
-            if(FrameCount > 2)
-
-            if(FrameCount > 10)
-
-
 
             if(FrameCount > 5)
 
@@ -59,6 +52,7 @@ public class Bullet extends Actor
     
     public void explode()
     {
+        //adds explosion effect.
         if (Bullet.class!=null&&touchytouchy==0&&isTouching(Wall.class)||isTouching(PlayerTwo.class))
         {
             getWorld().addObject(new Explosion(), getX(), getY());
@@ -67,6 +61,7 @@ public class Bullet extends Actor
     
     public boolean touchingcond()
     {
+        //checks if bullet is in contact with player.
         if(isTouching(PlayerTwo.class))
         {
             return true;

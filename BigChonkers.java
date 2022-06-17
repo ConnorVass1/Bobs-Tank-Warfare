@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class BigChonkers extends TankClasses
-{
+{//sets values for tank on selection 
     int HP=15;
     int speedX = 2;
     int speedY = 0;

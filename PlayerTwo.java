@@ -7,7 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class PlayerTwo extends Players
-{           
+{   
+    //creates variables for player one, and identifies any objects needed, such as the tank selected on the selection screen
     int HP=0;
     int speedX;
     int speedY;
@@ -28,7 +29,7 @@ public class PlayerTwo extends Players
     int Powerupframecount2;
     MyWorld myworld;
     
-    
+    //allows playerone to check the tank selected for player one and two.
     public PlayerTwo(int sel, int sel2)
     {
         P1class=sel;
@@ -36,7 +37,7 @@ public class PlayerTwo extends Players
         setclass();
     }
     
-    
+    //Used to identify main play area and add objects to main play area.
     protected void addedToWorld​(World world)
     {
         myworld= (MyWorld) world;
@@ -62,6 +63,7 @@ public class PlayerTwo extends Players
     
     public void collision()
     {
+        //detects if the tank is in contact with a wall, and if so, does not allow the tank to pass through.
         Wall s1=(Wall) getOneObjectAtOffset(0- getImage().getWidth()/2,0, Wall.class);
         if (s1!=null) 
         {
@@ -94,7 +96,7 @@ public class PlayerTwo extends Players
     
     public void PowerUps()
     {
-        
+        //changes tank variables depending on what power up is collected, as well as frame counts to remove powerup effects.
         if(isTouching(Heal.class) && HP < 15)
         {
             HP = HP + 1;
@@ -143,6 +145,7 @@ public class PlayerTwo extends Players
     
     public void movement()
     {
+        //movement controls for tank, and sets rotation to face towards the other tank
         if(onstart == true)
         {
             setRotation(180);
@@ -170,6 +173,7 @@ public class PlayerTwo extends Players
     
     public void bulletmovement()
     {
+        //allows for bullet to shot when enter is pressed.
         FrameCount++;
         
         if(Greenfoot.isKeyDown("Enter") && FrameCount > 30)
@@ -183,6 +187,7 @@ public class PlayerTwo extends Players
     
     public void HPMechanics()
     {
+        //detects if player has taken damage, and changes hp based on playerones current damage.
         HPFrameCount++;
         if(isTouching(Bullet.class) && HPFrameCount > 96)
         {
@@ -202,6 +207,8 @@ public class PlayerTwo extends Players
     
     public void setclass()
     {
+        
+        //based on playertwo selection, sets the hp, speed, and damage of the tanks.
         if(P2class==1)
         {
             HP= amog.HP;
@@ -233,7 +240,7 @@ public class PlayerTwo extends Players
     
     public void Knockback()
     {
-        
+        //detects if bullet is touching a side of the tank, and knocks it back depending on where bullet hit.
         Bullet a1=(Bullet) getOneObjectAtOffset(0 + getImage().getWidth()/2,0, Bullet.class);
         if (a1!=null) 
         {

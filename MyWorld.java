@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     GreenfootImage Background;
-    int  p1;
+    int p1;
     int p2;
     PlayerTwo player2;
     PlayerOne player1;
@@ -38,12 +38,12 @@ public class MyWorld extends World
         super(1000, 600, 1);
         int p1=selection1;
         int p2=selection2;
-        
+        //adding player on start
         player2= new PlayerTwo(selection1, selection2);
         addObject(player2, 900, 300);
         player1= new PlayerOne(selection1, selection2);
         addObject(player1, 100, 300);
-        
+        //adding hp on start
         addObject(new HP1(player1), 100, 100);
         addObject(new HP2(player2), 800, 100);
         
@@ -58,7 +58,7 @@ public class MyWorld extends World
     
     public void act()
     {
-
+        //determines powerup spawning, and which powerup spawns
         pwupframecounter++;
         x = (int)(Math.random()*(max-min)+min);
         y = (int)(Math.random()*(max1-min1)+min1);
@@ -74,6 +74,7 @@ public class MyWorld extends World
     
     public void rngpowerups()
     {
+        //determines spawn location for which power up spawns
         if(whichpowerup<=6000)
         {
             addObject(new Heal(), x, y);
