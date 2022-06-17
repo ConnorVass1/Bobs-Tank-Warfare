@@ -19,7 +19,7 @@ public class PlayerTwo extends Players
     int PowerUpframecount;
     int stopspeedX;
     int stopspeedY;
-
+    GreenfootSound damagepower = new GreenfootSound("Ac130.mp3");
     //class initializations
     AmogusMKII amog= new AmogusMKII();
     BigChonkers chonk= new BigChonkers();

@@ -14,7 +14,7 @@ public class PlayerOne extends Players
     int KnockbackFrameCount = 0;
     int P1class;
     int P2class;
-    
+    GreenfootSound damagepower = new GreenfootSound("Ac130.mp3");
     
     
     AmogusMKII amog= new AmogusMKII();
@@ -175,6 +175,7 @@ public class PlayerOne extends Players
         
         if(isTouching(Damage.class))
         {
+            damagepower.play();
             PowerUpframecount2++;
             if(PowerUpframecount2<=100)
             {
