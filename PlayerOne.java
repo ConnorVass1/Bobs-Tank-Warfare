@@ -10,6 +10,7 @@ public class PlayerOne extends Players
     int FrameCount = 0;
     int HPFrameCount;
     int PowerUpframecount=0;
+    int PowerUpframecount2=0;
     int KnockbackFrameCount = 0;
     int P1class;
     int P2class;
@@ -57,8 +58,8 @@ public class PlayerOne extends Players
 
         
 
-        System.out.println(HP);
-
+        System.out.println(PowerUpframecount2);
+        System.out.println(damage);
         //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
         PlayerOne player2;
 
@@ -149,7 +150,7 @@ public class PlayerOne extends Players
         if (HP==0)
         {
             getWorld().addObject(new PlayerTwoWins(), 500, 300);
-            return;
+            
         }
     }
     
@@ -165,26 +166,42 @@ public class PlayerOne extends Players
         
         if(isTouching(Speed.class))
         {
-            PowerUpframecount++;
+            
             if(PowerUpframecount<=100)
             {
                 speedX=speedX+5;
             }
         }
         
-        if(isTouching(Damage.class))
+        if(speedX - 5 > 2)
         {
             PowerUpframecount++;
-            if(PowerUpframecount<=100)
+        }
+        
+        if(isTouching(Damage.class))
+        {
+            PowerUpframecount2++;
+            if(PowerUpframecount2<=100)
             {
                 damage=damage+1;
             }
         }
-        
-        if (PowerUpframecount>=100)
+
+        if(PowerUpframecount2 > 0)
         {
-            damage=1;
+            PowerUpframecount2++;
+        }
+    
+        if (PowerUpframecount>=50)
+        {
             speedX=speedX-1;
+            PowerUpframecount = 0;
+        }
+        
+        if(PowerUpframecount2 > 400)
+        {
+            damage = damage - 1;
+            PowerUpframecount2 = 0;
         }
     }
     
