@@ -31,7 +31,7 @@ public class MyWorld extends World
     int pwupframecounter;
 
     int PowerUpFrameCount;
-    
+     
 
     public MyWorld(int selection1, int selection2)
     {    
