@@ -25,7 +25,8 @@ public class PlayerTwo extends Players
     BigChonkers chonk= new BigChonkers();
     Bob bob= new Bob();
     GlassCannon glass= new GlassCannon();
-    
+    int Powerupframecount;
+    int Powerupframecount2;
     MyWorld myworld;
     
     
@@ -94,6 +95,7 @@ public class PlayerTwo extends Players
     
     public void PowerUps()
     {
+        
         if(isTouching(Heal.class))
         {
             HP = HP + 1;
@@ -101,20 +103,42 @@ public class PlayerTwo extends Players
         
         if(isTouching(Speed.class))
         {
-            PowerUpframecount++;
+            
             if(PowerUpframecount<=100)
             {
                 speedX=speedX+5;
             }
         }
         
-        if(isTouching(Damage.class))
+        if(speedX - 5 > 2)
         {
             PowerUpframecount++;
-            if(PowerUpframecount<=100)
+        }
+        
+        if(isTouching(Damage.class))
+        {
+            Powerupframecount2++;
+            if(Powerupframecount2<=100)
             {
                 damage=damage+1;
             }
+        }
+
+        if(Powerupframecount2 > 0)
+        {
+            Powerupframecount2++;
+        }
+    
+        if (PowerUpframecount>=50)
+        {
+            speedX=speedX-1;
+            PowerUpframecount = 0;
+        }
+        
+        if(Powerupframecount2 > 400)
+        {
+            damage = damage - 1;
+            Powerupframecount2 = 0;
         }
     }
     
