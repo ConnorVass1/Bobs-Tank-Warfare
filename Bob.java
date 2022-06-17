@@ -14,6 +14,13 @@ public class Bob extends TankClasses
     int damage=1;
     public void act()
     {
-        // Add your action code here.
+        if (getWorld() instanceof Player2Selection)
+        {
+            setImage("Normp2.png");         
+        } 
+        if (getWorld() instanceof Player1Selection)
+        {
+            setImage("Normp1.png");         
+        } 
     }
 }

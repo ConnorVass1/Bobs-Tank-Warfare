@@ -14,6 +14,13 @@ public class AmogusMKII extends TankClasses
     int damage=1;
     public void act()
     {
-        // Add your action code here.
+        if (getWorld() instanceof Player2Selection)
+        {
+            setImage("SpeedTankp.png");         
+        } 
+        if (getWorld() instanceof Player1Selection)
+        {
+            setImage("SpeedTank.png");         
+        } 
     }
 }

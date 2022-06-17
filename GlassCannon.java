@@ -14,6 +14,13 @@ public class GlassCannon extends TankClasses
     int damage=1;
     public void act()
     {
-        // Add your action code here.
+       if (getWorld() instanceof Player2Selection)
+        {
+            setImage("dmgTankP.png");         
+        } 
+       if (getWorld() instanceof Player1Selection)
+        {
+            setImage("dmgTank.png");         
+        } 
     }
 }
