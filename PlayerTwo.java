@@ -17,8 +17,7 @@ public class PlayerTwo extends Players
     int P1class;
     int P2class;
     int PowerUpframecount;
-    int stopspeedX;
-    int stopspeedY;
+    boolean onstart = true;
     GreenfootSound damagepower = new GreenfootSound("Ac130.mp3");
     //class initializations
     AmogusMKII amog= new AmogusMKII();
@@ -96,7 +95,7 @@ public class PlayerTwo extends Players
     public void PowerUps()
     {
         
-        if(isTouching(Heal.class))
+        if(isTouching(Heal.class) && HP < 15)
         {
             HP = HP + 1;
         }
@@ -144,8 +143,11 @@ public class PlayerTwo extends Players
     
     public void movement()
     {
-        stopspeedX = speedX - speedX;
-        stopspeedY = speedY - speedY;
+        if(onstart == true)
+        {
+            setRotation(180);
+            onstart = false;
+        }
         
         if(Greenfoot.isKeyDown("Right"))
         {

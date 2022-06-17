@@ -14,7 +14,7 @@ public class PlayerOne extends Players
     int KnockbackFrameCount = 0;
     int P1class;
     int P2class;
-
+    boolean onstart = true;
     GreenfootSound damagepower = new GreenfootSound("Ac130.mp3");
     
 
@@ -164,7 +164,7 @@ public class PlayerOne extends Players
     public void PowerUps()
     {
         
-        if(isTouching(Heal.class))
+        if(isTouching(Heal.class) && HP < 15)
         {
             HP = HP + 1;
         }
