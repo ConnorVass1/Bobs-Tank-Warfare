@@ -14,8 +14,14 @@ public class PlayerOne extends Players
     int KnockbackFrameCount = 0;
     int P1class;
     int P2class;
+
     GreenfootSound damagepower = new GreenfootSound("Ac130.mp3");
     
+
+    
+    GreenfootSound shoot = new GreenfootSound("shoot.mp3");
+    GreenfootSound move = new GreenfootSound("move.mp3");
+
     
     AmogusMKII amog= new AmogusMKII();
     BigChonkers chonk= new BigChonkers();
@@ -104,18 +110,22 @@ public class PlayerOne extends Players
         if(Greenfoot.isKeyDown("D"))
         {
             turn(speedX);
+            move.play();
         }
         if(Greenfoot.isKeyDown("A"))
         {
             turn(-speedX);
+            move.play();
         }
         if(Greenfoot.isKeyDown("W"))
         {
             move(speedX);
+            move.play();
         }
         if(Greenfoot.isKeyDown("S"))
         {
             move(-speedX);
+            move.play();
         }
     }
     
@@ -128,7 +138,7 @@ public class PlayerOne extends Players
              Bullet bullet = new Bullet(5,0);
              bullet.setRotation(getRotation());
              getWorld().addObject(bullet, getX(), getY());
-             
+             shoot.play();
              FrameCount = 0;
         }
     }
