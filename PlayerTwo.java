@@ -59,6 +59,7 @@ public class PlayerTwo extends Players
         collision();
         PowerUps();
         System.out.println(speedX);
+        
     }
     
     public void collision()
@@ -181,7 +182,11 @@ public class PlayerTwo extends Players
     public void movement()
     {
         //movement controls for tank, and sets rotation to face towards the other tank
-        
+        if(onstart == true)
+        {
+            setRotation(180);
+            onstart = false;
+        }
         if(Greenfoot.isKeyDown("Right"))
         {
             turn(speedX);
@@ -219,7 +224,7 @@ public class PlayerTwo extends Players
     {
         //detects if player has taken damage, and changes hp based on playerones current damage.
         HPFrameCount++;
-        if(isTouching(Bullet.class) && HPFrameCount > 96)
+        if(isTouching(Bullet.class) && HPFrameCount > 96||isTouching(PlayerOne.class)&& HPFrameCount > 96)
         {
             HP = HP - myworld.player1.damage;
             HPFrameCount = 0;

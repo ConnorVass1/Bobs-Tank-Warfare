@@ -187,7 +187,7 @@ public class PlayerOne extends Players
     {
         //detects if player has taken damage, and changes hp based on playerones current damage.      
         HPFrameCount++;
-        if(isTouching(Bullet2.class) && HPFrameCount > 96)
+        if(isTouching(Bullet2.class) && HPFrameCount > 96||isTouching(PlayerTwo.class)&& HPFrameCount > 96)
         {
             HP = HP - myworld.player2.damage;
             HPFrameCount = 0;
