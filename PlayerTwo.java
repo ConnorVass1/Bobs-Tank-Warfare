@@ -58,7 +58,7 @@ public class PlayerTwo extends Players
         bulletmovement();
         collision();
         PowerUps();
-        System.out.println(PowerUpframecount);
+        System.out.println(speedX);
     }
     
     public void collision()
@@ -105,13 +105,19 @@ public class PlayerTwo extends Players
         if(isTouching(Speed.class))
         {
             
-            if(PowerUpframecount<=100)
+            if(PowerUpframecount<=300)
             {
                 speedX=speedX+5;
             }
         }
         
-        if(speedX - 5 > 2)
+        if (PowerUpframecount > 300)
+        {
+            speedX=speedX-5;
+            PowerUpframecount = 0;
+        }
+        
+        if(speedX >= 7)
         {
             PowerUpframecount++;
         }
@@ -130,11 +136,7 @@ public class PlayerTwo extends Players
             Powerupframecount2++;
         }
     
-        if (PowerUpframecount>=50)
-        {
-            speedX=speedX-1;
-            PowerUpframecount = 0;
-        }
+        
         
         if(Powerupframecount2 > 400)
         {

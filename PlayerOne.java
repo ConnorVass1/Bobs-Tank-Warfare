@@ -181,9 +181,15 @@ public class PlayerOne extends Players
             }
         }
         
-        if(speedX - 5 > 2)
+        if(speedX >= 7)
         {
             PowerUpframecount++;
+        }
+        
+        if (PowerUpframecount > 300)
+        {
+            speedX=speedX-5;
+            PowerUpframecount = 0;
         }
         
         if(isTouching(Damage.class))
@@ -199,12 +205,6 @@ public class PlayerOne extends Players
         if(PowerUpframecount2 > 0)
         {
             PowerUpframecount2++;
-        }
-    
-        if (PowerUpframecount>=50)
-        {
-            speedX=speedX-1;
-            PowerUpframecount = 0;
         }
         
         if(PowerUpframecount2 > 400)
