@@ -223,6 +223,7 @@ public class PlayerOne extends Players
             speedX=amog.speedX;
             speedY=amog.speedX;
             damage= amog.damage;
+            setImage("SpeedTank.png");
         }
         
         if(P1class==2)
@@ -231,6 +232,7 @@ public class PlayerOne extends Players
             speedX=chonk.speedX;
             speedY=chonk.speedX;
             damage= chonk.damage;
+            setImage("Tanky.png");
         }
         
         if(P1class==3)
@@ -239,6 +241,7 @@ public class PlayerOne extends Players
             speedX=bob.speedX;
             speedY=bob.speedX;
             damage= bob.damage;
+            setImage("Normp1.png");
         }
         
         if(P1class==4)
@@ -247,6 +250,7 @@ public class PlayerOne extends Players
             speedX=glass.speedX;
             speedY=glass.speedX;
             damage= glass.damage;
+            setImage("dmgTank.png");
         }
     }
     

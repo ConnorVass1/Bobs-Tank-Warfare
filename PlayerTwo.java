@@ -214,6 +214,7 @@ public class PlayerTwo extends Players
             HP= amog.HP;
             speedX=amog.speedX;
             damage= amog.damage;
+            setImage("SpeedTankp.png");
         }
         
         if(P2class==2)
@@ -221,6 +222,7 @@ public class PlayerTwo extends Players
             HP= chonk.HP;
             speedX=chonk.speedX;
             damage= chonk.damage;
+            setImage("Tankyp.png");
         }
         
         if(P2class==3)
@@ -228,6 +230,7 @@ public class PlayerTwo extends Players
             HP= bob.HP;
             speedX=bob.speedX;
             damage= bob.damage;
+            setImage("Normp2.png");
         }
         
         if(P2class==4)
@@ -235,6 +238,7 @@ public class PlayerTwo extends Players
             HP= glass.HP;
             speedX=glass.speedX;
             damage= glass.damage;
+            setImage("dmgTankP.png");
         }
     }
     
