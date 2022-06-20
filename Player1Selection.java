@@ -15,7 +15,7 @@ public class Player1Selection extends World
      */
     public Player1Selection()
     {    
-        super(600, 400, 1);
+        super(300, 300, 1);
 
         prepare();
     }
@@ -26,13 +26,16 @@ public class Player1Selection extends World
      */
     private void prepare()
     {
+
         Cursor cursor = new Cursor();
-        addObject(cursor,152,105);
-        BigChonkers bigChonkers = new BigChonkers();
-        addObject(bigChonkers,138,305);
+        addObject(cursor,153,148);
         Bob bob = new Bob();
-        addObject(bob,269,319);
+        addObject(bob,72,68);
+        BigChonkers bigChonkers = new BigChonkers();
+        addObject(bigChonkers,73,236);
+        GlassCannon glassCannon = new GlassCannon();
+        addObject(glassCannon,225,244);
         AmogusMKII amogusMKII = new AmogusMKII();
-        addObject(amogusMKII,583,33);
+        addObject(amogusMKII,232,70);
     }
 }

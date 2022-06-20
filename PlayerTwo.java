@@ -148,11 +148,6 @@ public class PlayerTwo extends Players
     public void movement()
     {
         //movement controls for tank, and sets rotation to face towards the other tank
-        if(onstart == true)
-        {
-            setRotation(180);
-            onstart = false;
-        }
         
         if(Greenfoot.isKeyDown("Right"))
         {
@@ -240,7 +235,7 @@ public class PlayerTwo extends Players
             HP= glass.HP;
             speedX=glass.speedX;
             damage= glass.damage;
-            setImage("dmgTankP.png");
+            setImage("dmgTankp.png");
         }
     }
     

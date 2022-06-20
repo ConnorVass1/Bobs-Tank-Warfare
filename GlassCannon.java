@@ -16,7 +16,7 @@ public class GlassCannon extends TankClasses
     {
        if (getWorld() instanceof Player2Selection)
         {
-            setImage("dmgTankP.png");         
+            setImage("dmgTankp.png");         
         } 
        if (getWorld() instanceof Player1Selection)
         {
