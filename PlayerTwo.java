@@ -58,7 +58,7 @@ public class PlayerTwo extends Players
         bulletmovement();
         collision();
         PowerUps();
-        System.out.println(PowerUpframecount);
+        System.out.println(speedX);
     }
     
     public void collision()
@@ -105,13 +105,19 @@ public class PlayerTwo extends Players
         if(isTouching(Speed.class))
         {
             
-            if(PowerUpframecount<=100)
+            if(PowerUpframecount<=300)
             {
                 speedX=speedX+5;
             }
         }
         
-        if(speedX - 5 > 2)
+        if (PowerUpframecount > 300)
+        {
+            speedX=speedX-5;
+            PowerUpframecount = 0;
+        }
+        
+        if(speedX >= 7)
         {
             PowerUpframecount++;
         }
@@ -130,11 +136,7 @@ public class PlayerTwo extends Players
             Powerupframecount2++;
         }
     
-        if (PowerUpframecount>=50)
-        {
-            speedX=speedX-1;
-            PowerUpframecount = 0;
-        }
+        
         
         if(Powerupframecount2 > 400)
         {
@@ -214,6 +216,7 @@ public class PlayerTwo extends Players
             HP= amog.HP;
             speedX=amog.speedX;
             damage= amog.damage;
+            setImage("SpeedTankp.png");
         }
         
         if(P2class==2)
@@ -221,6 +224,7 @@ public class PlayerTwo extends Players
             HP= chonk.HP;
             speedX=chonk.speedX;
             damage= chonk.damage;
+            setImage("Tankyp.png");
         }
         
         if(P2class==3)
@@ -228,6 +232,7 @@ public class PlayerTwo extends Players
             HP= bob.HP;
             speedX=bob.speedX;
             damage= bob.damage;
+            setImage("Normp2.png");
         }
         
         if(P2class==4)
@@ -235,6 +240,7 @@ public class PlayerTwo extends Players
             HP= glass.HP;
             speedX=glass.speedX;
             damage= glass.damage;
+            setImage("dmgTankP.png");
         }
     }
     
