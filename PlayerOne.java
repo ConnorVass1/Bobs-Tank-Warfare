@@ -100,6 +100,44 @@ public class PlayerOne extends Players
             setLocation(getX(), sg.getY()+sg.getImage().getHeight()/2
             +getImage().getHeight()/2);
         }
+        
+        
+        
+        
+        
+        PlayerTwo s3=(PlayerTwo) getOneObjectAtOffset(0- getImage().getWidth()/2,0, PlayerTwo.class);
+        if (s3!=null) 
+        {
+            setLocation(s3.getX()+s3.getImage().getWidth()/2
+            +getImage().getWidth()/2,getY());
+        }
+        
+        PlayerTwo s4=(PlayerTwo) getOneObjectAtOffset(0+ getImage().getWidth()/2,0,PlayerTwo.class);
+        if (s4!=null) 
+        {
+            setLocation(s4.getX()-s4.getImage().getWidth()/2
+            -getImage().getWidth()/2,getY());   
+        }
+        
+        PlayerTwo pf3=(PlayerTwo) getOneObjectAtOffset(0, getImage().getHeight()/2, PlayerTwo.class);
+        if (pf3!=null) 
+        {
+            setLocation(getX(),pf3.getY()-pf3.getImage().getHeight()/2
+            -getImage().getHeight()/2+1);
+        }
+        
+        PlayerTwo sg4=(PlayerTwo) getOneObjectAtOffset(0,- getImage().getHeight()/2, PlayerTwo.class);
+        if (sg4!=null) 
+        {
+            setLocation(getX(), sg4.getY()+sg4.getImage().getHeight()/2
+            +getImage().getHeight()/2);
+        }
+        
+        
+        
+        
+        
+        
     }
     
     

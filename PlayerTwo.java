@@ -91,7 +91,40 @@ public class PlayerTwo extends Players
             setLocation(getX(), sg.getY()+sg.getImage().getHeight()/2
             +getImage().getHeight()/2);
         }
-
+        
+        
+        
+        
+        
+        
+        PlayerOne s3=(PlayerOne) getOneObjectAtOffset(0- getImage().getWidth()/2,0, PlayerOne.class);
+        if (s3!=null) 
+        {
+            setLocation(s3.getX()+s3.getImage().getWidth()/2
+            +getImage().getWidth()/2,getY());
+        }
+        
+        PlayerOne s4=(PlayerOne) getOneObjectAtOffset(0+ getImage().getWidth()/2,0,PlayerOne.class);
+        if (s4!=null) 
+        {
+            setLocation(s4.getX()-s4.getImage().getWidth()/2
+            -getImage().getWidth()/2,getY());   
+        }
+        
+        PlayerOne pf3=(PlayerOne) getOneObjectAtOffset(0, getImage().getHeight()/2, PlayerOne.class);
+        if (pf3!=null) 
+        {
+            setLocation(getX(),pf3.getY()-pf3.getImage().getHeight()/2
+            -getImage().getHeight()/2+1);
+        }
+        
+        PlayerOne sg4=(PlayerOne) getOneObjectAtOffset(0,- getImage().getHeight()/2, PlayerOne.class);
+        if (sg4!=null) 
+        {
+            setLocation(getX(), sg4.getY()+sg4.getImage().getHeight()/2
+            +getImage().getHeight()/2);
+        }
+        
     }
     
     public void PowerUps()
