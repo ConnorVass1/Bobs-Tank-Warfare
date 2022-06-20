@@ -49,7 +49,7 @@ public class Bullet2 extends Actor
     
     public boolean touchingcond()
     {
-        if(isTouching(PlayerOne.class))
+        if(isTouching(PlayerOne.class)||isTouching(Wall.class))
         {
             return true;
         }

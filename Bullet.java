@@ -62,7 +62,7 @@ public class Bullet extends Actor
     public boolean touchingcond()
     {
         //checks if bullet is in contact with player.
-        if(isTouching(PlayerTwo.class))
+        if(isTouching(PlayerTwo.class)||isTouching(Wall.class))
         {
             return true;
         }
