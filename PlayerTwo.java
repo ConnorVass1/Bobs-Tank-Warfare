@@ -59,6 +59,7 @@ public class PlayerTwo extends Players
         collision();
         PowerUps();
         System.out.println(speedX);
+        
     }
     
     public void collision()
@@ -148,7 +149,11 @@ public class PlayerTwo extends Players
     public void movement()
     {
         //movement controls for tank, and sets rotation to face towards the other tank
-        
+        if(onstart == true)
+        {
+            setRotation(180);
+            onstart = false;
+        }
         if(Greenfoot.isKeyDown("Right"))
         {
             turn(speedX);
