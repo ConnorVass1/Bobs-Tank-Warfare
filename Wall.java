@@ -14,6 +14,6 @@ public class Wall extends Actor
      */
     public void act()
     {
-        setImage("ball.png");
+        setImage("Sandbag Walls.png");
     }
 }

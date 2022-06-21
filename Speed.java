@@ -14,6 +14,7 @@ public class Speed extends Powerups
      */
     public void act()
     {
+        setImage("Speed.png");
         if(isTouching(Wall.class))
         {
             setLocation(getX()+5, getY());

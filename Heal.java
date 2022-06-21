@@ -15,6 +15,7 @@ public class Heal extends Powerups
      */
     public void act()
     {
+        setImage("Heal.png");
         if(isTouching(Wall.class))
         {
             setLocation(getX()+5, getY());

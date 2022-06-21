@@ -14,6 +14,7 @@ public class Damage extends Powerups
      */
     public void act()
     {
+        setImage("Damage.png");
         if(isTouching(Wall.class))
         {
             setLocation(getX()+5, getY());
