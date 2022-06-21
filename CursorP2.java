@@ -19,7 +19,7 @@ public class CursorP2 extends Actor
     
     public void act()
     {
-        
+        setImage("amogu.png");
         dx=0;
         dy=0;
          

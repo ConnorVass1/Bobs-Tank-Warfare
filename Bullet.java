@@ -16,6 +16,7 @@ public class Bullet extends Actor
     public void act()
     {
         //if a bullet touches a player, it sets the explosion effect, and removes the bullet.
+        setImage("ball.png");
         move(deltaX);
         if(Bullet.class!=null &&touchingcond() == true)
         {

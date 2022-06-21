@@ -15,6 +15,7 @@ public class Bullet2 extends Actor
     int touchytouchycounter=0;
     public void act()
     {
+        setImage("ball.png");
         move(deltaX);
         if(Bullet2.class!=null &&touchingcond() == true)
         {

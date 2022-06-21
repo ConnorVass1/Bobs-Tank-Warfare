@@ -14,6 +14,6 @@ public class PlayerOneWins extends Win
      */
     public void act()
     {
-        // Add your action code here.
+        setImage("Sandbag Walls.png");
     }
 }

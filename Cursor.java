@@ -15,7 +15,7 @@ public class Cursor extends Actor
     int select=0;
     public void act()
     {
-        
+        setImage("amogu.png");
         dx=0;
         dy=0;
         
