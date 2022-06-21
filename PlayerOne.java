@@ -63,9 +63,7 @@ public class PlayerOne extends Players
 
         
 
-        System.out.println(PowerUpframecount2);
-        System.out.println(damage);
-        //System.out.println("stats are:HP1 "+HP+"SPeed1"+speedX+"Damage1"+damage);
+        
         PlayerOne player2;
 
     }

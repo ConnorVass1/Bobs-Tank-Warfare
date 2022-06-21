@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player1Selection extends World
 {
+    boolean onstart = true;
 
     /**
      * Constructor for objects of class Player1Selection.
@@ -19,7 +20,20 @@ public class Player1Selection extends World
 
         prepare();
     }
-
+    
+    public void act()
+    {
+        if(onstart == true)
+        {
+            System.out.println("Welcome to Bob's Tank Warfare! To play as player one, use");
+            System.out.println("Wasd to control the tank, and spacebar to fire.");
+            System.out.println("To control player two, use the arrow keys and enter to fire");
+            onstart = false;
+        }
+        
+    }
+    
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

@@ -43,7 +43,7 @@ public class MyWorld extends World
         addObject(player1, 100, 300);
         //adding hp on start
         addObject(new HP1(player1), 100, 100);
-        addObject(new HP2(player2), 800, 100);
+        addObject(new HP2(player2), 800, 50);
 
         GreenfootSound music = new GreenfootSound("BFG Division.mp3");
         //to loop the song when it stops
